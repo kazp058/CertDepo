@@ -1,12 +1,12 @@
 <?php
 
-$servername="localhost";
+$servername="localhost:3036";
 $dBUsername="root";
-$dBPassword="Ero14a$S";
+$dBPassword="admin";
 $dBName="loginsystem";
 
-$conn = mysql_connect($servername, $dBUsername, $dBPassword, $dBName);
+$conn = mysql_connect($servername, $dBUsername, $dBPassword);
 
 if (!$conn){
-   die("Connection failed: ".mysql_connect_error());
+  die("Connection failed: ".mysql_connect_error());
 }
