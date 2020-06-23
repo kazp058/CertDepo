@@ -29,41 +29,41 @@ if(isset($_POST['signup-submit'])){
     }
     else{
        $sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
-       $stmt = mysql_stmt_init($conn);
-       if (!mysql_stmt_prepare($stmt, $sql)){
-          header("Location: ../signup.php?error=sqlerror");
+       $stmt = mysqli_stmt_init($conn);
+       if (!mysqli_stmt_prepare($stmt, $sql)){
+          header("Location: ../signup.php?error=sqlconnectionerror");
           exit();
        }
        else{
-          mysql_stmt_bind_param($stmt, "s" ,$username);
-          mysql_stmt_execute($stmt);
-          mysql_stmt_store_result($stmt);
-          $resultCheck = mysql_stmt_num_rows($stmt);
+          mysqli_stmt_bind_param($stmt, "s" ,$username);
+          mysqli_stmt_execute($stmt);
+          mysqli_stmt_store_result($stmt);
+          $resultCheck = mysqli_stmt_num_rows($stmt);
           if($resultCheck > 0){
               header("Location: ../signup.php?error=usertaken&mail=".$email);
               exit();
           }
           else {
               $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) Values (?, ?, ?)";
-              $stmt = mysql_stmt_init($conn);
-              if (!mysql_stmt_prepare($stmt, $sql)){
-                 header("Location: ../signup.php?error=sqlerror");
+              $stmt = mysqli_stmt_init($conn);
+              if (!mysqli_stmt_prepare($stmt, $sql)){
+                 header("Location: ../signup.php?error=sqlconnectionAerror");
                  exit();
               }
               else{
 
                  $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
-                 mysql_stmt_bind_param($stmt, "sss", $username, $email,$hashedPwd);
-                 mysql_stmt_execute($stmt);
+                 mysqli_stmt_bind_param($stmt, "sss", $username, $email,$password);
+                 mysqli_stmt_execute($stmt);
                  header("Location: ../signup.php?signup=success");
                  exit();
               }
           }
        }
     }
-    mysql_stmt_close($stmt);
-    mysql_close($conn);
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 }
 else{
 
