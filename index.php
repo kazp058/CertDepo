@@ -5,8 +5,14 @@
    <main>
      <div class="wrapper-main">
         <section class="section-default">
-          <p class="login-status">You are logged out</p>
-          <p class="login-status">You are log in</p>
+          <?php
+              if(isset($_SESSION["userId"])){
+                 echo '<p class="login-status">You are logged in!</p>';
+              }
+              else{
+                 echo '<p class="login-status">You are logged out!</p>';
+              }
+          ?>
         </section>
      </div>
    </main>
