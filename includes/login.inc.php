@@ -36,12 +36,12 @@ if (isset($_POST['login-submit'])){
                exit();
             }
             else {
-               header("Location: ../index.php?error=wrongpwd");
+               header("Location: ../login.php?error=wrongpwd");
                exit();
             }
          }
          else {
-            header("Location: ../index.php?error=nouser&");
+            header("Location: ../login.php?error=nouser&");
             exit();
          }
       }
