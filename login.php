@@ -31,7 +31,7 @@
         if(isset($_SESSION["userId"])){
           echo '<form action="includes/logout.inc.php" method="post"><button type="submit" name="logout-submit">Logout</button></form>';
         }else{
-          echo '<form action="includes/login.inc.php" method="post"><input type="text" name="uid" placeholder="Username.."><input type="password" name="pwd" placeholder="Password..."><button type="submit" name="login-submit">Login</button></form><div class="register-message"><p>No account?</p><a href="signup.php">Signup</a></div>';
+          echo '<form action="includes/login.inc.php" method="post"><input type="text" name="uid" placeholder="Username.."><input type="password" name="pwd" placeholder="Password..."><button type="submit" name="login-submit">Login</button></form><div class="register-message"><p>No account?</p><ul><li><a href="signup.php">Signup</a></li><li><a href="reset-password.php">Forgot your password?</a></li></div>';
         }
       ?>
     </section>
