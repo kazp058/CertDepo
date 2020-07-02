@@ -3,6 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 //use PHPMailer\PHPMailer\Exception;
 
+
 require_once('/usr/share/php/libphp-phpmailer/autoload.php');
 
 function sendmail($email,$subject,$body){
@@ -18,8 +19,9 @@ function sendmail($email,$subject,$body){
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = '465';
     $mail->SMTPAuth = true;
-    $mail->Username = "robotronduran@gmail.com";
-    $mail->Password = "robotron123";
+    include 'credentials.php';
+    $mail->Username = $account;
+    $mail->Password = $accountpwd;
     //$mail->Port = 465;
     //$mail->SMTPSecure = "ssl";
     $mail->isHTML(true);
@@ -34,9 +36,8 @@ function sendmail($email,$subject,$body){
     }
     else
     {
-       header("Location: ../reset-password.php?error=serviceinvalid");
+       header("Location: ../reset-password.php?error=serviceinvalid&".$accountpwd);
        exit();
-    }
-      //return json_encode(array("status"=>$status, "response"=>$response));
+    }      //return json_encode(array("status"=>$status, "response"=>$response));
   }
 }
