@@ -26,6 +26,11 @@
             echo '<p class="loginsuccess">Welcome</p>';
           }
         }
+        else if(isset($_GET["newpwd"])){
+          if($_GET["newpwd"] == "passwordupdated"){
+            echo '<p class="loginsuccess">Your password has been reset!</p>'; 
+          }
+        }
       ?>
       <?php
         if(isset($_SESSION["userId"])){

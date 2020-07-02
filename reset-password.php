@@ -1,7 +1,6 @@
 <?php
   require "header.php";
 ?>
-
    <main>
      <div class="wrapper-main">
        <section class="section-default">
@@ -11,6 +10,15 @@
              <input type="text" name="email" placeholder="Enter your e-mail address...">
              <button type="submit" name="reset-request-submit">Recover account</button>
           </form>
+          <?php
+             if(isset($_GET["reset"]))
+             {
+               if($_GET["reset"] == "success")
+               {
+                 echo '<p class="signupsuccess">Check your e-mail!</p>';
+               }
+             }
+          ?>
        </section>
      </div>
    </main>
