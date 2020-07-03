@@ -1,5 +1,5 @@
 <?php
-    require "header.php"
+    require "header.php";
 ?>
 
    <main>
@@ -7,10 +7,14 @@
         <section class="section-default">
           <?php
               if(isset($_SESSION["userId"])){
-                 echo '<p class="login-status">You are loggedin!</p>';
+                 ?>
+                 <p class="login-status">You are loggedin!</p>
+                 <?php
               }
               else{
-                 echo '<p class="login-status">You are logged out!</p>';
+                 ?>
+                 <p class="login-status">You are logged out!</p>
+                 <?php
               }
           ?>
         </section>
@@ -18,5 +22,6 @@
    </main>
 
 <?php
-    require "footer.php"
+    require "footer.php";
 ?>
+
