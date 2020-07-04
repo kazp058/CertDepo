@@ -23,8 +23,24 @@
            <li><a href = "#">About us</a></li>
            <li><a href = "#">Support</a></li>
            <li class="nav-links-mobile">
-              <a href = "login.php">Login</a>
-              <a href = "signup.php">Signup</a>
+           <?php
+               if(isset($_SESSION['userId'])){
+           ?>
+                 <a href = "login.php">Login</a>
+                 <a href = "signup.php">Signup</a>
+              <form action="includes/logout.inc.php" method="post">
+                 <button class="highloght-link-onblack" type="submit" name="logout-submit">Logout</button>
+              </form>
+
+           <?php
+               }
+               else{
+           ?>
+                 <a href = "login.php">Login</a>
+                 <a href = "signup.php">Signup</a>
+           <?php
+               }
+           ?>
            </li>
          </ul>
          <div class = "header-login">
@@ -32,18 +48,16 @@
                if(isset($_SESSION['userId'])){
                   ?>
                   <form action="includes/logout.inc.php" method="post">
-                     <button type="submit" name="logout-submit">Logout</button>
+                     <button class="highlight-link-onblack" type="submit" name="logout-submit">Logout</button>
                   </form>
                   <?php
                }
                else{
                   ?>
-                  <form class = "non-essential-mobile" action="includes/login.inc.php" method="post">
-                     <input class="optional-input" type="text" name="mail" placeholder="e-mail..">
-                     <input class="optional-input" type="password" name="pwd" placeholder="Password...">
-                     <button type="submit" name="login-submit">Login</button>
-                  </form>
-                  <a class="non-essential-mobile" href="signup.php">Signup</a>
+                  <div class="non-essential-mobile">
+                     <a href="login.php">Login</a>
+                     <a class="highlight-link-onblack" href="signup.php">Signup</a>
+                  </div>
                   <?php
                }
            ?>
