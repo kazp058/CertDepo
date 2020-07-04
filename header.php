@@ -26,12 +26,9 @@
            <?php
                if(isset($_SESSION['userId'])){
            ?>
-                 <a href = "login.php">Login</a>
-                 <a href = "signup.php">Signup</a>
               <form action="includes/logout.inc.php" method="post">
-                 <button class="highloght-link-onblack" type="submit" name="logout-submit">Logout</button>
+                 <button class="highlight-link-onblack" type="submit" name="logout-submit">Logout</button>
               </form>
-
            <?php
                }
                else{

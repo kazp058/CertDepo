@@ -39,7 +39,7 @@ button{
 .nav-links{
     display: flex;
     justify-content: space-around;
-    width: 30%;
+    width: 40%;
 }
 
 .nav-links a{
@@ -195,6 +195,10 @@ button{
       transform: translateX(100%);
       transition: transform 0.5s ease-in;
    }
+   
+   .header-login{
+      display:none;
+   }
 
    .non-essential-mobile {
       display:none;
@@ -235,6 +239,10 @@ button{
       width: 50%;
       transform: translateX(100%);
       transition: transform 0.5s ease-in;
+   }
+  
+   .header-login button{
+      display:none;
    }
 
    .non-essential-mobile {
