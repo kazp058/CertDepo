@@ -26,8 +26,9 @@ button{
    cursor: pointer;
 }
 
-hr{
+form hr{
    border: 0.5px solid #153b6e;
+   width: 80%;
 }
 
 .logo{
@@ -84,11 +85,12 @@ hr{
 
 .section-default{
 
-   margin: 20px;
+   margin: 20px auto;
    display: flex;
    align-items: center;
-   flex-direction:column;
 
+   flex-direction:column;
+   text-align:left;
 }
 
 .section-default h1{
@@ -97,8 +99,8 @@ hr{
 }
 
 .section-default form{
-   margin: 10px;
-   width: 60%
+   margin: 10px auto;
+   width: 40%
 }
 
 .section-default form input, .section-default form p{
@@ -110,6 +112,7 @@ hr{
    border-radius: 15px;
    border: 4px solid #153b6e;
    background-color:  #e6ecf5;
+   width: 100%;
 }
 
 .section-default button{
@@ -120,7 +123,7 @@ hr{
    border-radius: 15px;
    background-color: #153b6e;
    border: 4px solid #153b6e;
-   padding: 5px;
+   padding: 5px 10px;
    cursor:pointer;
    color: #e6ecf5;
 }
@@ -139,7 +142,7 @@ hr{
    margin-top:0px;
 }
 
-.options-horizontal a{
+a{
    text-decoration: none;
    color: #1756AB;
 }
@@ -163,6 +166,14 @@ hr{
    padding: 5px 20px;
    color: #e6ecf5;
    border-radius: 15px;
+}
+
+.messages .success{
+   background-color:#10AB28;
+   padding: 5px 20px;
+   color: #e6ecf5;
+   border-radius: 15px;
+
 }
 
 .information{
@@ -191,9 +202,22 @@ hr{
    background-color:#153b6e;
 }
 
+.highlight-text{
+   font-weight: bold;
+   font-size: 15px;
+}
+
+.optional-space{
+   display:none;
+}
+
 .form-section{
-   width:100%;
+   width:80%;
    margin: 30px 0px;
+}
+
+.form-section input{
+   width: 100%
 }
 
 .form-section .checkmark {
@@ -211,7 +235,9 @@ hr{
    color: #153b6e;
 }
 
-.form-certificate{}
+.form-certificate label{
+   margin: 30px 0px;
+}
 
 @media screen and (max-width:1010px){
    form .optional-input{
@@ -264,6 +290,23 @@ hr{
    .burger{
       display:block;
    }
+
+   form hr{
+    width: 100%;
+   }
+
+   .section-default{
+      text-align: center;
+   }
+
+   .section-default form{
+      width: 80%
+   }
+
+   .section-default .form-section{
+      align-items: center;
+      margin: 30px auto;
+   }
 }
 
 @media screen and (max-width:550px){
@@ -309,6 +352,11 @@ hr{
    .burger{
       display:block;
    }
+
+   .section-default form{
+      width: 100%;
+   }
+
 }
 
 

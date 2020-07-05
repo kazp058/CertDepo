@@ -48,12 +48,12 @@
              <input type="text" name="mail">
              <p>Password</p>
              <input type="password" name="pwd">
-             <br></br>
+             <p><a class="options-horizontal" href="reset-password.php">Forgot your password?</a></p><br>
              <button class="highlight-button" type="submit" name="login-submit">Login</button>
           </form>
           <div class="options-horizontal">
+              <br>
               <ul>
-                 <li><a href="reset-password.php">Forgot your password?</a></li>
                  <li class="option-horizontal"><p>No account?</p><a class="highlight-link" href="signup.php">Signup here</a></li>
               </ul>
           </div>
