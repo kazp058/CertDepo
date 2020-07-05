@@ -17,6 +17,10 @@
              }else if(isset($_GET["error"])){
                if($_GET["error"] == "invalidemail"){
                  echo '<p class="error">Invalid email</p>';
+               }else if($_GET["error"] == "noaccount"){
+                 echo '<p class="error">No account related to this email was found!</p>';
+               }else if($_GET["error"] == "sqlerror"){
+                 echo '<p class="error">There was a problem, try this later or contact support</p>';
                }
              }
           ?>

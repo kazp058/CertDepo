@@ -23,6 +23,22 @@ if(isset($_POST["reset-request-submit"])){
 
     require 'dbh.inc.php';
 
+    $sql = "SELECT * FROM users WHERE emailUsers=?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+       header("Location: ../reset-password.php?error=sqlerror");
+       exit();
+    }else{
+       mysqli_stmt_bind_param($stmt, "s", $userEmail);
+       mysqli_stmt_execute($stmt);
+       $result = mysqli_stmt_get_result($stmt);
+       if ($row = mysqli_fetch_assoc($result)){}else{
+          header("Location: ../reset-password.php?error=noaccount");
+          exit();
+       }
+    }
+
     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail =?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -61,6 +77,7 @@ if(isset($_POST["reset-request-submit"])){
 
     sendmail($to, $subject, $message);
     header("Location: ../reset-password.php?reset=success&".$a);
+    exit();
   }
 }
 else{
