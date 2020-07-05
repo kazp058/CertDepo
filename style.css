@@ -26,6 +26,10 @@ button{
    cursor: pointer;
 }
 
+hr{
+   border: 0.5px solid #153b6e;
+}
+
 .logo{
    color: #e6ecf5;
    text-transform: uppercase;
@@ -74,6 +78,10 @@ button{
    transition: all 0.3s ease;
 }
 
+.optionalfield{
+   display:none;
+}
+
 .section-default{
 
    margin: 20px;
@@ -90,6 +98,7 @@ button{
 
 .section-default form{
    margin: 10px;
+   width: 60%
 }
 
 .section-default form input, .section-default form p{
@@ -114,6 +123,13 @@ button{
    padding: 5px;
    cursor:pointer;
    color: #e6ecf5;
+}
+
+.section-table{
+   margin: 20px;
+   display: flex;
+   align-items: left;
+   flex-direction:column;
 }
 
 .options-horizontal li{
@@ -149,12 +165,22 @@ button{
    border-radius: 15px;
 }
 
+.information{
+   display: none;
+   background-color:#D9920C;
+   padding: 5px 20px;
+   color: #e6ecf5;
+   border-radius: 15px;
+   margin: 10px 0px;
+}
+
 .highlight-link{
    color: #153b6e;
    border: 4px solid #153b6e;
    border-radius: 15px;
    padding: 2px 5px;
    background-color:transparent;
+   text-decoration: none;
 }
 
 .highlight-link-onblack{
@@ -164,6 +190,28 @@ button{
    padding: 4px 6px;
    background-color:#153b6e;
 }
+
+.form-section{
+   width:100%;
+   margin: 30px 0px;
+}
+
+.form-section .checkmark {
+   margin: 0px 2px;
+   width: 25px;
+   height: 25px;
+   text-align: center;
+   vertical-align: middle;
+   background-color: #e6ecf5;
+   border: solid #153b6e;
+}
+
+.form-certificate h3{
+   font-size: 20px;
+   color: #153b6e;
+}
+
+.form-certificate{}
 
 @media screen and (max-width:1010px){
    form .optional-input{

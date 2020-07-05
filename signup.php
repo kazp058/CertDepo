@@ -40,13 +40,13 @@
              </div>
              <form class="form-signup" action="includes/signup.inc.php" method="post">
                 <p>Name</p>
-                <input type="text" name="uid" placeholder="Name">
+                <input type="text" name="uid">
                 <p>Email</p>
-                <input type="text" name="mail" placeholder="Email">
+                <input type="text" name="mail">
                 <p>Password</p>
-                <input type="password" name="pwd" placeholder="Password">
+                <input type="password" name="pwd">
                 <p>Repeat your password</p>
-                <input type="password" name="pwd-repeat" placeholder="Repeat password">
+                <input type="password" name="pwd-repeat">
                 <br></br>
                 <button class= "highlight-button"type="submit" name="signup-submit">Signup</button>
              </form>

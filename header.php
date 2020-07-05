@@ -19,7 +19,7 @@
          </div>
          <ul class="nav-links">
            <li><a href = "index.php">Home</a></li>
-           <li><a href = "#">Certificates</a></li>
+           <li><a href = "certificates.php">Certificates</a></li>
            <li><a href = "#">About us</a></li>
            <li><a href = "#">Support</a></li>
            <li class="nav-links-mobile">

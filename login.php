@@ -45,9 +45,9 @@
           ?>
           <form action="includes/login.inc.php" method="post">
              <p>Email</p>
-             <input type="text" name="mail" placeholder="e-mail..">
+             <input type="text" name="mail">
              <p>Password</p>
-             <input type="password" name="pwd" placeholder="Password...">
+             <input type="password" name="pwd">
              <br></br>
              <button class="highlight-button" type="submit" name="login-submit">Login</button>
           </form>
