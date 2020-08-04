@@ -41,7 +41,7 @@ CREATE DATABASE db_name;
 |pwdUsers|Password of the user encrypted|long string|
 |isCompany|Byte to determine is it is a company or not|Byte|
 
-##### pwdReset 
+##### pwdReset Table
 |Field name|Description|Data type|
 |---|---|---|
 |pwdResetId|Id of the current session|integer|
@@ -49,3 +49,6 @@ CREATE DATABASE db_name;
 |pwdResetSelector|Validator for the token and the reset session|string|
 |pwdResetToken|Token that the user recieves in the email|string|
 |pwdResetExpires|Date that determines when it expires|integer|
+
+#### Tables in certificatesdb
+
