@@ -9,7 +9,7 @@ if(isset($_POST['search-submit'])){
     exit();
   }
   else{
-    $sql = "SELECT * FROM certs WHERE key=?;";
+    $sql = "SELECT * FROM certs WHERE certToken=?;";
     $stmt = mysqli_stmt_init($conn_certs);
 
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -22,8 +22,22 @@ if(isset($_POST['search-submit'])){
       $result = mysqli_stmt_get_result($stmt);
 
       if($row = mysqli_fetch_assoc($stmt)){
-        header("Location: ../viewcertificate.php?");
-        exit();
+
+        if($row['isClaimed']){
+          $sql = "SELECT * FROM users WHERE idUsers=?;";
+          $stmt = mysqli_stmt_init($conn);
+
+          if(!mysqli_stmt_prepare($stmt,$sql)){
+            header("Location: ../certificates.php?error=sqlerror");
+            exit();
+          }else{
+            header("Location: ../certificates.php?title=".$row['title']."&name=".$row['name']."&img=".$row['img']."&key=".$row['key']);
+            exit();
+          }
+        }else{
+          header("Location: ../certificates.php??title=".$row['title']."&userId=".$row['userId']."&img=".$row['img']."&key=".$row['key']);
+          exit();
+        }
       }else{
         header("Location: ../certificates.php?error=nocert");
         exit();

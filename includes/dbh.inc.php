@@ -7,7 +7,7 @@ $dBPassword="admin";
 $dBName= "loginsystem";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
-$conn_certs = mysqli_connect($servername, $dbUsername, $dBPassword, "certificatesdb")
+$conn_certs = mysqli_connect($servername, $dBUsername, $dBPassword, "certificatesdb");
 
 if (!$conn){
   die("Connection failed: ".mysqli_connect_error());
