@@ -1,6 +1,8 @@
 # Automail Online
 Website design for hosting a certficicates management system, this site helps keeping a record of certificates generated and send them throught email, the system generates a unique key to every certificate generated.
 
+TEST
+
 ## Server information
 The server is running with a LAMP server.
 
