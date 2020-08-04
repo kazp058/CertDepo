@@ -14,16 +14,20 @@
              document.getElementById("upload").style.display = "none";
              document.getElementById("survey-test").style.display = "none";
              document.getElementById("upload-file").style.display = "none";
+             document.getElementById("date-selector").style.display = "none";
 
              if(selection.value == "survey"){
                 document.getElementById("survey").style.display = "inline-block";
+                document.getElementById("date-selector").style.display = "inline-block";
              }else if(selection.value == "test"){
                 document.getElementById("test").style.display = "inline-block";
+                document.getElementById("date-selector").style.display = "inline-block";
              }else if(selection.value == "upload"){
                 document.getElementById("upload").style.display = "inline-block";
                 document.getElementById("upload-file").style.display = "inline-block";
              }else if(selection.value == "survey-test"){
                 document.getElementById("survey-test").style.display = "inline-block";
+                document.getElementById("date-selector").style.display = "inline-block";
              }
           }else if(selection && num == "1"){
              document.getElementById("assistance").style.display = "none";
@@ -57,7 +61,7 @@
        }
     </script>
 
-    <form class="form-certificate" action="includes/logout.inc.php" method="post">
+    <form class="form-certificate" action="includes/certificates-request.inc.php" method="post">
 
        <h3>Certificate Information</h3><hr>
 
@@ -112,12 +116,21 @@
             <p class="information" id="survey-test">A survey link will be granted, when you send the link people will be asked to fill their name and mail, later when you enable the test and email with a test will be sent for them to complete</label>
           </div>
           <div class="optionalfield" id="upload-file">
-            <label>Upload file
-               <input type="file" name="data" accept=".csv, .xlsx">
-            </label>
+            <label>Upload file with the data for the certificates</label><br>
+               <input class="inputfile" id="file" type="file" name="data" accept=".csv, .xlsx">
+               <label for="file">Choose a file</label>
           </div>
        </div>
-       <button class="main-button" type="submit" name="certificate-submit">Create certificate</button>
+
+
+       <div class="form-section" id="date-selector-survey">
+          <div class="optionalfield" id="date-selector">
+             <h3>Survey</h3>
+             <label>From: <input type="date" name="dateFrom" value="<?php echo date('Y-m-d');?>"></label>
+             <label>To: <input type="date" name="dateTo" value="<?php echo date('Y-m-d');?>"></label>
+          </div>
+       </div>
+       <button class="highlight-button" type="submit" name="certificate-submit">Create certificate</button>
     </form>
   </section>
  </div>

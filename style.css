@@ -115,6 +115,15 @@ form hr{
    width: 100%;
 }
 
+.section-default form select{
+    background-color: #e6ecf5;
+    border: 3px solid #153b6e;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.section-default form 
+
 .section-default button{
    outline:none;
 }
@@ -126,6 +135,31 @@ form hr{
    padding: 5px 10px;
    cursor:pointer;
    color: #e6ecf5;
+}
+
+.section-default .inputfile{
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+}
+
+.section-default .inputfile + label{
+   font-size: 1.25em;
+   font-weight: 700;
+   border: 2px solid #153b6e;
+   border-radius: 10px; 
+   color: #153b6e;
+   background-color: #e6ecf5;
+   display: inline-block;
+   cursor: pointer;
+   padding: 10px 5px;
+}
+
+.section-default .inputfile:focus + label, .section-default .inputfile + label:hover{
+   background-color:#CCD3DD;
 }
 
 .section-table{
@@ -222,12 +256,13 @@ a{
 
 .form-section .checkmark {
    margin: 0px 2px;
+   cursor: pointer;
    width: 25px;
    height: 25px;
    text-align: center;
    vertical-align: middle;
    background-color: #e6ecf5;
-   border: solid #153b6e;
+   border: 2px solid #153b6e;
 }
 
 .form-certificate h3{
