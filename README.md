@@ -8,3 +8,11 @@ Website design for hosting a certficicates management system, this site helps ke
    $account = "youremail@example.com";
    $accountpwd = "yourpassword";
 ```
+
+## MySQLi
+MySQLi added to the root user
+### Databases
+| Name|Description|
+|---|---|
+|loginsystem|Contains tables related to the login system and password recovery|
+|certificatesdb|Contains tables related to the certificate system and all types of surveys|
