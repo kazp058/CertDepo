@@ -20,6 +20,11 @@
         if(isset($_GET['token'])){
           $command = escapeshellcmd('includes/scripts/generateCert.py');
           shell_exec($command);
+          ?>
+
+          <img src="includes/Test_.jpg" alt="Test">
+
+          <?php
         }
         ?>
         </section>
