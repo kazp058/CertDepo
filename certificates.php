@@ -15,6 +15,7 @@
 	   </form>
 
 	</section>
+
         <section class="section-default">
         <?php
         if(isset($_GET['token'])){
@@ -23,11 +24,32 @@
           ?>
 
           <img src="includes/Test_.jpg" alt="Test">
-
           <?php
+
+          if(isset($_GET['claimed'])){
+            if(isset($_SESSION['userId'])){
+          ?>
+              <form class="code-form" action="includes/claim.inc.php" method="post">
+                <div class="text">
+                   <input type="text" maxlength="6">
+                </div>
+                <div class="button-wrapper">
+                   <button class="highlight-button">Claim Certificate</button>
+                </div>
+              </form>
+          <?php
+            }else{
+          ?>
+            <form action="login.php" method="put">
+                <button class="highlight-button">Claim Certificate</button>
+            </form>
+          <?php
+            }
+          }
         }
         ?>
         </section>
+
         <section class="section-table">
             <?php
                 if(isset($_SESSION['userId'])){

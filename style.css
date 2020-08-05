@@ -90,7 +90,7 @@ form hr{
    align-items: center;
 
    flex-direction:column;
-   text-align:left;
+   text-align:center;
 }
 
 .section-default h1{
@@ -101,6 +101,7 @@ form hr{
 .section-default form{
    margin: 10px auto;
    width: 40%
+   
 }
 
 .section-default form input, .section-default form p{
@@ -122,7 +123,9 @@ form hr{
     border-radius: 10px;
 }
 
-.section-default form 
+.section-default form{
+   display: inline-block;
+} 
 
 .section-default button{
    outline:none;
@@ -135,6 +138,7 @@ form hr{
    padding: 5px 10px;
    cursor:pointer;
    color: #e6ecf5;
+   width: 70%;
 }
 
 .section-default .inputfile{
