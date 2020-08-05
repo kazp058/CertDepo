@@ -31,11 +31,11 @@ if(isset($_POST['search-submit'])){
             header("Location: ../certificates.php?error=sqlerror");
             exit();
           }else{
-            header("Location: ../certificates.php?title=".$row['title']."&name=".$row['name']."&img=".$row['img']."&key=".$row['key']);
+            header("Location: ../certificates.php?token=".$row['certToken']."&claimed=no");
             exit();
           }
         }else{
-          header("Location: ../certificates.php??title=".$row['title']."&userId=".$row['userId']."&img=".$row['img']."&key=".$row['key']);
+          header("Location: ../certificates.php?token=".$row['certToken']);
           exit();
         }
       }else{

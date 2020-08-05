@@ -15,7 +15,15 @@
 	   </form>
 
 	</section>
-         <section class="section-table">
+        <section class="section-default">
+        <?php
+        if(isset($_GET['token'])){
+          $command = escapeshellcmd('includes/scripts/generateCert.py');
+          shell_exec($command);
+        }
+        ?>
+        </section>
+        <section class="section-table">
             <?php
                 if(isset($_SESSION['userId'])){
                     ?>
@@ -33,11 +41,7 @@
                              <a class="highlight-link" href="create-certificate.php">Create new certificate</a>
                            </section>
                            <?php
-			  }else{
-		           ?>
-                            <a class="highlight-link" href="claim_certificate.php">Claim certificate</a>
-                           <?php
-                         }
+			  }
                        }
 		    }
                        ?>
