@@ -36,7 +36,7 @@ CREATE DATABASE db_name;
 
 Creation command:
 ```mysql
-CREATE TABLE `loginsystem`.`users` ( `idUsers` INT NOT NULL AUTO_INCREMENT , `uidUsers` TEXT NOT NULL , `emailUsers` TEXT NOT NULL , `isCompany` BOOLEAN NOT NULL DEFAULT FALSE , `pwdUsers` LONGTEXT NOT NULL , `assignedCerts` JSON NOT NULL , `madeCerts` JSON NOT NULL , `logo` TEXT NULL , PRIMARY KEY (`idUsers`(11))) ENGINE = CSV;
+CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUsers TEXT NOT NULL , emailUsers TEXT NOT NULL , isCompany BOOLEAN NOT NULL DEFAULT FALSE , pwdUsers LONGTEXT NOT NULL, logo TEXT NULL, assignedCerts JSON NOT NULL , madeCerts JSON NOT NULL)
 ```
 
 |Field name|Description|Data type|
