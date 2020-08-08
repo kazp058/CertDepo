@@ -26,13 +26,13 @@ In order to add this databases you can use the command:
 CREATE DATABASE db_name;
 ```
 
-#### Tables in loginsystem
+## Tables in loginsystem
 |Name|Description|
 |---|---|
 |users|Contains information of the user, all data that is collected from the registry|
 |pwdReset|Contains temporary information for the password recovery system|
 
-##### users Table
+### users Table
 
 Creation command:
 ```mysql
@@ -47,7 +47,7 @@ CREATE TABLE `loginsystem`.`users` ( `idUsers` INT NOT NULL AUTO_INCREMENT , `ui
 |pwdUsers|Password of the user encrypted|long string|
 |isCompany|Byte to determine is it is a company or not|Byte|
 
-##### pwdReset Table
+### pwdReset Table
 |Field name|Description|Data type|
 |---|---|---|
 |pwdResetId|Id of the current session|integer|
@@ -56,5 +56,5 @@ CREATE TABLE `loginsystem`.`users` ( `idUsers` INT NOT NULL AUTO_INCREMENT , `ui
 |pwdResetToken|Token that the user recieves in the email|string|
 |pwdResetExpires|Date that determines when it expires|integer|
 
-#### Tables in certificatesdb
+## Tables in certificatesdb
 
