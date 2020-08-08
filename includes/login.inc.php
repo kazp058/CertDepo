@@ -33,6 +33,11 @@ if (isset($_POST['login-submit'])){
                $_SESSION['userUid'] = $row['uidUsers'];
                $_SESSION['userMail'] = $row['emailUsers'];
 	       $_SESSION['isCompany'] = $row['isCompany'];
+               $_SESSION['certName'] = 'none';
+               $_SESSION['certTitle'] = 'none';
+               $_SESSION['certToken'] = 'none';
+               $_SESSION['certDate'] = 'none';
+               $_SESSION['certIssuer'] = 'none';
 
                header("Location: ../login.php?login=success");
                exit();

@@ -17,25 +17,28 @@
 	</section>
 
         <section class="section-default">
-        <?php
-        if(isset($_GET['token'])){
-          $command = escapeshellcmd('includes/scripts/generateCert.py');
-          shell_exec($command);
+          <?php
+          if(isset($_GET['token'])){
+            $command = escapeshellcmd('includes/scripts/generateCert.py');
+            shell_exec($command);
           ?>
 
           <img src="includes/Test_.jpg" alt="Test">
           <?php
+          
 
           if(isset($_GET['claimed'])){
             if(isset($_SESSION['userId'])){
           ?>
-              <form class="code-form" action="includes/claim.inc.php" method="post">
-                <div class="text">
-                   <input type="text" maxlength="6">
-                </div>
-                <div class="button-wrapper">
-                   <button class="highlight-button">Claim Certificate</button>
-                </div>
+              <form action="includes/claim.inc.php" method="post">
+                <input type="hidden" name="token" value="<?php echo $_GET['token'];?>">
+                <input type="hidden" name="userId" value="<?php echo $_SESSION['userId'];?>">
+                <div class="options-horizontal">
+                  <ul>
+                   <li><p>Claim Code</p></li>
+                   <li><input style="text-align:center;" name="ccode" type="text" maxlength="6"></li>
+                   <li><button class="highlight-button" name="claim-submit">Claim Certificate</button></li>
+                  </ul>
               </form>
           <?php
             }else{

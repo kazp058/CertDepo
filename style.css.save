@@ -101,7 +101,6 @@ form hr{
 .section-default form{
    margin: 10px auto;
    width: 40%
-   
 }
 
 .section-default form input, .section-default form p{
@@ -116,11 +115,6 @@ form hr{
    width: 100%;
 }
 
-.section-default form .center{
-   text-align: center;
-}
-
-
 .section-default form select{
     background-color: #e6ecf5;
     border: 3px solid #153b6e;
@@ -128,12 +122,15 @@ form hr{
     border-radius: 10px;
 }
 
-.section-default form{
-   display: inline-block;
 } 
 
 .section-default button{
    outline:none;
+}
+
+.section-default .middle{
+   padding: 20px;
+   text-align: center;
 }
 
 .section-default .highlight-button{

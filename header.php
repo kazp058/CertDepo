@@ -21,7 +21,7 @@
            <li><a href = "index.php">Home</a></li>
            <li><a href = "certificates.php">Certificates</a></li>
            <li><a href = "#">About us</a></li>
-           <li><a href = "#">Support</a></li>
+           <li><a href = "support.php">Support</a></li>
            <li class="nav-links-mobile">
            <?php
                if(isset($_SESSION['userId'])){

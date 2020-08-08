@@ -32,10 +32,23 @@ if(isset($_POST['search-submit'])){
             exit();
           }else{
             header("Location: ../certificates.php?token=".$row['certToken']."&claimed=no");
+            $_SESSION['certName'] = $row['name'];
+            $_SESSION['certTitle'] = $row['title'];
+            $_SESSION['certToken'] = $row['certToken'];
+            $_SESSION['certDate'] = $row['cert'];
+            $_SESSION['certIssuer'] = $row['certIssuer'];
+
             exit();
           }
         }else{
           header("Location: ../certificates.php?token=".$row['certToken']);
+
+          $_SESSION['certName'] = 'none';
+          $_SESSION['certTitle'] = 'none';
+          $_SESSION['certToken'] = 'none';
+          $_SESSION['certDate'] = 'none';
+          $_SESSION['certIssuer'] = 'none';
+
           exit();
         }
       }else{
