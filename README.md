@@ -33,6 +33,12 @@ CREATE DATABASE db_name;
 |pwdReset|Contains temporary information for the password recovery system|
 
 ##### users Table
+
+Creation command:
+```mysql
+CREATE TABLE `loginsystem`.`users` ( `idUsers` INT NOT NULL AUTO_INCREMENT , `uidUsers` TEXT NOT NULL , `emailUsers` TEXT NOT NULL , `isCompany` BOOLEAN NOT NULL DEFAULT FALSE , `pwdUsers` LONGTEXT NOT NULL , `assignedCerts` JSON NOT NULL , `madeCerts` JSON NOT NULL , `logo` TEXT NULL , PRIMARY KEY (`idUsers`(11))) ENGINE = CSV;
+```
+
 |Field name|Description|Data type|
 |---|---|---|
 |idUsers|Incremental index|integer|
