@@ -64,3 +64,23 @@ CREATE TABLE pwdreset ( pwdResetId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 
 ## Tables in certificatesdb
 
+|Name|Description|
+|---|---|
+|certs|Contains information of every certificate registered by the system|
+
+### certs
+```mysql
+CREATE TABLE certificatesdb( idCerts INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, titleCerts TEXT NOT NULL , issuerCerts INT(11) NOT NULL , userCerts INT(11) NOT NULL , tokenCerts LONGTEXT NOT NULL , claimCerts INT(6) NOT NULL , imageCert TEXT NOT NULL , dateCert INT NOT NULL, isClaimed BOOLEAN NOT NULL DEFAULT FALSE)
+```
+
+|Field name|Description|Data type|
+|---|---|---|
+|idCerts|Id of the current certificate|integer|
+|titleCerts|Title of the certificate|string|
+|issuerCerts|id of the certificate issuer|integer|
+|issuerCerts|id of the user that claimed the certificate|integer|
+|tokenCerts|Token that validates the certificate|string|
+|claimCerts|Code that allows to user to claim a certificate|integer|
+|imageCert|Certificate Template|string|
+|dateCert|Date of the emission|integer|
+|isClaimed|Tells if the certificate is claimed by an account|boolean|
