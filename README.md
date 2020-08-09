@@ -48,6 +48,12 @@ CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUs
 |isCompany|Byte to determine is it is a company or not|Byte|
 
 ### pwdReset Table
+
+Creation command:
+```mysql
+CREATE TABLE pwdreset ( pwdResetId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, pwdResetEmail TEXT NOT NULL , pwdResetSelector TEXT NOT NULL , pwdResetToken TEXT NOT NULL , pwdResetExpires INT NOT NULL);
+```
+
 |Field name|Description|Data type|
 |---|---|---|
 |pwdResetId|Id of the current session|integer|
