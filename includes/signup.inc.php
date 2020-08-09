@@ -11,7 +11,7 @@ if(isset($_POST['signup-submit'])){
        header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
        exit();
     }
-    else if(!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)){
+    else if(!filter_var($email,FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9_ ]*$/", $username)){
        header("Location: ../signup.php?error=invalidmailuid");
        exit();
     }
@@ -19,7 +19,7 @@ if(isset($_POST['signup-submit'])){
        header("Location: ../signup.php?error=invalidmail&uid=".$username);
        exit();
     }
-    else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
+    else if(!preg_match("/^[a-zA-Z0-9_ ]*$/", $username)){
        header("Location: ../signup.php?error=invaliduid&mail=".$email);
        exit();
     }
@@ -56,7 +56,7 @@ if(isset($_POST['signup-submit'])){
 
                  mysqli_stmt_bind_param($stmt, "sss", $username, $email,$hashedPwd);
                  mysqli_stmt_execute($stmt);
-                 header("Location: ../signup.php?signup=success&".$hashedPwd);
+                 header("Location: ../signup.php?signup=success");
                  exit();
               }
           }
