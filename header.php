@@ -9,7 +9,7 @@
       <meta name= "viewport" content="width=device-width, height=device-height">
       <title>Certificates</title>
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
+      <!--<link rel="stylesheet" href="style.css">--->
    </head>
    <body>
      <header>
@@ -68,4 +68,3 @@
      </header>
      <script src = "app.js"></script>
    </body>
-</html>
