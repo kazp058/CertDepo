@@ -1,60 +1,49 @@
 <?php
-if (isset($_POST['login-submit'])){
+if (isset($_POST['login-submit'])) {
 
    require 'dbh.inc.php';
 
    $mail = $_POST['mail'];
    $password = $_POST['pwd'];
 
-   if ( empty($mail) || empty($password) ){
-      header("Location: ../login.php?error=emptyfields&uid=".$mail);
+   if (empty($mail) || empty($password)) {
+      header("Location: ../login.php?error=emptyfields&uid=" . $mail);
       exit();
-   }
-   else {
+   } else {
       $sql = "SELECT * FROM users WHERE emailUsers=?;";
       $stmt = mysqli_stmt_init($conn);
-      if (!mysqli_stmt_prepare($stmt, $sql)){
+      if (!mysqli_stmt_prepare($stmt, $sql)) {
          header("Location: ../login.php?error=sqlerror");
          exit();
-      }
-      else {
+      } else {
          mysqli_stmt_bind_param($stmt, "s", $mail);
          mysqli_stmt_execute($stmt);
          $result = mysqli_stmt_get_result($stmt);
-         if ($row = mysqli_fetch_assoc($result)){
+         if ($row = mysqli_fetch_assoc($result)) {
             $pwdCheck = password_verify($password, $row['pwdUsers']);
             if ($pwdCheck == false) {
-               header("Location: ../login.php?error=wrongpwd&".$row['pwdUsers']."&".$password);
+               header("Location: ../login.php?error=wrongpwd&" . $row['pwdUsers'] . "&" . $password);
                exit();
-            }
-            else if ($pwdCheck == true){
+            } else if ($pwdCheck == true) {
                session_start();
                $_SESSION['userId'] = $row['idUsers'];
                $_SESSION['userUid'] = $row['uidUsers'];
                $_SESSION['userMail'] = $row['emailUsers'];
-	       $_SESSION['isCompany'] = $row['isCompany'];
-               $_SESSION['certName'] = 'none';
-               $_SESSION['certTitle'] = 'none';
-               $_SESSION['certToken'] = 'none';
-               $_SESSION['certDate'] = 'none';
-               $_SESSION['certIssuer'] = 'none';
+               $_SESSION['isCompany'] = $row['isCompany'];
 
-               header("Location: ../login.php?login=success");
+               header("Location: ../login.php?login=success&isCompany=" . $_SESSION['isCompany']);
                exit();
-            }
-            else {
+            } else {
                header("Location: ../login.php?error=wrongpwd");
                exit();
             }
-         }
-         else {
+         } else {
             header("Location: ../login.php?error=nouser&");
             exit();
          }
       }
    }
-}
-else{
+} else {
    header("Location: ../login.php");
    exit();
 }
