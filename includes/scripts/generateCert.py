@@ -23,7 +23,6 @@ imagename, username, title, token, issuerName, idcert = getparam(line)
 
 if imagename == '001.png':
     image = Image.open("includes/scripts/certificates/001.png")
-    
     back_im = image.copy()
 
     qr = qrcode.QRCode(version=1,
@@ -35,7 +34,6 @@ if imagename == '001.png':
     qrimg = qr.make_image(fill_color="black", back_color="#f2f2f2")
 
     back_im.paste(qrimg,(0,0))
-    
     draw = ImageDraw.Draw(back_im)
 
     font = ImageFont.truetype('tw-cen-mt-6.ttf', size=200)
