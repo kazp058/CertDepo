@@ -6,6 +6,9 @@ require 'header.php';
    <div class="wrapper-main">
       <section class="section-default">
          <?php
+         if(isset($_GET['success'])){
+            $_SESSION['isCompany'] = 1;
+         }
          if (isset($_SESSION['userId'])) {
          ?>
             <div>
