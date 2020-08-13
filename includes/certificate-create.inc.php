@@ -57,6 +57,23 @@ if (isset($_POST['survey-submit'])) {
 
          if ($row = mysqli_fetch_assoc($result)) {
 
+            if($row['certsCreated'] + 1 > $row['certsAssigned']){
+               header("Location: ../survey.php?id=" . $id . "&error=nospace");
+               exit();
+            }else{
+               $sql = "UPDATE certscompany SET certsCreated=".$row['certsCreated'] ." +1 WHERE certId=?;";
+               $stmt = mysqli_stmt_init($conn_certs);
+         
+               if (!mysqli_stmt_prepare($stmt, $sql)) {
+                  header("Location: ../survey.php?id=" . $id . "&error=sql");
+                  exit();
+               } else {
+                  mysqli_stmt_bind_param($stmt, "s", $id);
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+               }
+            }
+
             $sql = "INSERT INTO certs (titleCerts, userName, certMail, issuerCerts, tokenCerts, claimCerts, imageCert, dateCert) VALUES (?,?,?,?,?,?,?,?);";
             $stmt = mysqli_stmt_init($conn_certs);
 
