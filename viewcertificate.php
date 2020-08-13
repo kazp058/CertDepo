@@ -1,5 +1,0 @@
-<?php
-   require 'header.php';
-?>
-
-
