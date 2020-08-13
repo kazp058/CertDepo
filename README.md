@@ -1,32 +1,40 @@
 # Automail Online
+
 Website design for hosting a certficicates management system, this site helps keeping a record of certificates generated and send them throught email, the system generates a unique key to every certificate generated.
 
 ## Server information
+
 The server is running with a LAMP server.
 
 ## Instructions for use
+
 1. Create inside **includes** folder a file named **credentials.php**, make sure to put in here these following variables:
-```php
+
+``` php
 <?php
    $account = "youremail@example.com";
    $accountpwd = "yourpassword";
 ```
 
 ## MySQLi
+
 MySQLi added to the root user.
 
 ### Databases
+
 | Name|Description|
 |---|---|
 |loginsystem|Contains tables related to the login system and password recovery|
 |certificatesdb|Contains tables related to the certificate system and all types of surveys|
 
 In order to add this databases you can use the command:
-```mysql
+
+``` mysql
 CREATE DATABASE db_name;
 ```
 
 ## Tables in loginsystem
+
 |Name|Description|
 |---|---|
 |users|Contains information of the user, all data that is collected from the registry|
@@ -35,7 +43,8 @@ CREATE DATABASE db_name;
 ### users Table
 
 Creation command:
-```mysql
+
+``` mysql
 CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUsers TEXT NOT NULL , emailUsers TEXT NOT NULL , isCompany BOOLEAN NOT NULL DEFAULT FALSE , pwdUsers LONGTEXT NOT NULL, logo TEXT NULL, assignedCerts JSON NOT NULL , madeCerts JSON NOT NULL);
 ```
 
@@ -50,7 +59,8 @@ CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUs
 ### pwdReset Table
 
 Creation command:
-```mysql
+
+``` mysql
 CREATE TABLE pwdreset ( pwdResetId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, pwdResetEmail TEXT NOT NULL , pwdResetSelector TEXT NOT NULL , pwdResetToken TEXT NOT NULL , pwdResetExpires INT NOT NULL);
 ```
 
@@ -69,7 +79,8 @@ CREATE TABLE pwdreset ( pwdResetId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 |certs|Contains information of every certificate registered by the system|
 
 ### certs
-```mysql
+
+``` mysql
 CREATE TABLE certificatesdb( idCerts INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, titleCerts TEXT NOT NULL , issuerCerts INT(11) NOT NULL , userCerts INT(11) NOT NULL , tokenCerts LONGTEXT NOT NULL , claimCerts INT(6) NOT NULL , imageCert TEXT NOT NULL , dateCert INT NOT NULL, isClaimed BOOLEAN NOT NULL DEFAULT FALSE)
 ```
 
@@ -84,3 +95,18 @@ CREATE TABLE certificatesdb( idCerts INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY
 |imageCert|Certificate Template|string|
 |dateCert|Date of the emission|integer|
 |isClaimed|Tells if the certificate is claimed by an account|boolean|
+
+### certsCompany
+
+``` mysql
+CREATE TABLE `certificatesdb`.`certscompany` ( `certId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , `titleCerts` TEXT NOT NULL , `dateCert` INT NOT NULL , `certsCreated` INT(11) NOT NULL , `certsAssigned` INT(11) NOT NULL);
+```
+
+|Field name|Description|Data type|
+|---|---|---|
+|certId|Id of the current certificate group|integer|
+|titleCerts|Title of the certificate group|string|
+|dateCert|Date of the emission|integer|
+|certsCreated|certificates created|integer|
+|certsAssigned|Number of certificates assigned to the group|integer|
+|issuerCerts|Id of the company that created the group|integer|
