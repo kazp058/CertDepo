@@ -44,19 +44,36 @@ require 'header.php';
       <h1>Certificates Emitted(<?php
                                 require 'includes/dbh.inc.php';
 
-                                $sql = "SELECT * FROM certs WHERE issuerCerts=?;";
-                                $stmt = mysqli_stmt_init($conn_certs);
+                                $sql = "SELECT * FROM certscompany WHERE issuerCerts=?;";
+                                $stmt = mysqli_stmt_init($conn);
 
                                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                  header("Location: ../certificates.php?error=sqlerrorBBB");
+                                  header("Location: ../certificates.php?error=sqlerror");
                                   exit();
                                 } else {
-                                  mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
+                                  mysqli_stmt_bind_param($stmt, "i", $_SESSION['userId']);
                                   mysqli_stmt_execute($stmt);
                                   $result = mysqli_stmt_get_result($stmt);
-                                  $num_rows = mysqli_num_rows($result);
-                                  echo $num_rows;
+                                  $num = 0;
+                                  while ($row = $result->fetch_assoc()){
+                                    $certId =  $row['certId'];
+
+                                    $sql = "SELECT * FROM certs WHERE issuerCerts=?;";
+                                    $stmt = mysqli_stmt_init($conn_certs);
+
+                                    if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                      header("Location: ../certificates.php?error=sqlerror");
+                                      exit();
+                                    } else {
+                                      mysqli_stmt_bind_param($stmt, "s", $certId);
+                                      mysqli_stmt_execute($stmt);
+                                      $result = mysqli_stmt_get_result($stmt);
+                                      $num += mysqli_num_rows($result);
+                                    }
+                                  }
+                                  echo $num;
                                 }
+
                                 ?>/<?php
                                     require 'includes/dbh.inc.php';
 
@@ -64,7 +81,7 @@ require 'header.php';
                                     $stmt = mysqli_stmt_init($conn);
 
                                     if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                      header("Location: ../certificates.php?error=sqlerrorAAA");
+                                      header("Location: ../certificates.php?error=sqlerror");
                                       exit();
                                     } else {
                                       mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
