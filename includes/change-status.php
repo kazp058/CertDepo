@@ -14,7 +14,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 } else {
     mysqli_stmt_bind_param($stmt, "s", $id);
     mysqli_stmt_execute($stmt);
-    header("Location: ../support.php?success=change&id=".$id);
+    header("Location: ../support.php?success=change);
     exit();
 }
 }else{
