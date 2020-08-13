@@ -27,7 +27,7 @@ if (isset($_POST['claim-submit'])) {
 
       if ($row = mysqli_fetch_assoc($result)) {
         if ($row['claimCerts'] == $claim) {
-          $sql = "UPDATE certs SET userId=? WHERE tokenCerts=?;";
+          $sql = "UPDATE certs SET userCerts=? WHERE tokenCerts=?;";
           $stmt = mysqli_stmt_init($conn_certs);
 
           if (!mysqli_stmt_prepare($stmt, $sql)) {
