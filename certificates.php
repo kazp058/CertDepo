@@ -157,6 +157,9 @@ require 'header.php';
         <div>
           <h3><a href="create-certificate.php">Create Certificate</a></h3>
         </div>
+        <div>
+          <h3><a href="buy-certificates.php">Buy Certificates</a></h3>
+        </div>
       </div>
     <?php
         }
