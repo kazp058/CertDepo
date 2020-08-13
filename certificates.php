@@ -84,7 +84,7 @@ require 'header.php';
         <?php
           require 'includes/dbh.inc.php';
 
-          $sql = "SELECT * FROM certsCompany WHERE issuerCerts=?;";
+          $sql = "SELECT * FROM certscompany WHERE issuerCerts=?;";
           $stmt = mysqli_stmt_init($conn_certs);
 
           if (!mysqli_stmt_prepare($stmt, $sql)) {
