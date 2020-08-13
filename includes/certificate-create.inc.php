@@ -87,7 +87,7 @@ if (isset($_POST['survey-submit'])) {
 
                $url = '192.168.100.100/certificates.php?token=' . $token;
 
-               $to = $userEmail;
+               $to = $mail;
                $subject = 'Congratulations for you ' . $row['titleCerts'] . ' certificate';
                $message = '<p>Congrats ' . $name . '</p>';
                $message .= '<p>You just recieved a certificate, that you can claim if you create an account or leave it be, but remember, your certificate can be claimed by an account.</p>';
