@@ -22,6 +22,7 @@ def generateCert(image, name, title, token, issuer):
     #image.save(filename)
 
 line = sys.argv[0]
+print(line)
 line = line.split(',')
 
 generateCert(line[0], line[1], line[2], line[3], line[4])
