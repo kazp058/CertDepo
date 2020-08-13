@@ -46,7 +46,7 @@ require 'header.php';
               <div>
                 <div>
                   <h4>Share URL: </h4>
-                  <p><?php echo "192.168.100.100/show-certificate.php?id=" . $row['certId']; ?></p>
+                  <p><?php echo "192.168.100.100/show-certificate.php?id=" . $userrow['certId']; ?></p>
                 </div>
               </div>
             </div>
