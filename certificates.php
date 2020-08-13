@@ -25,8 +25,36 @@ require 'header.php';
         <h1>My certificates</h1>
         <hr>
         <?php
-        if (true) {
+        require 'includes/dbh.inc.php';
+
+        $sql = "SELECT * FROM certs WHERE userCerts=?;";
+        $stmt = mysqli_stmt_init($conn_certs);
+
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+          header("Location: ../certificates.php?error=sqlerror");
+          exit();
+        } else {
+          mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
+          mysqli_stmt_execute($stmt);
+          $result = mysqli_stmt_get_result($stmt);
+          while ($userrow = $result->fetch_assoc()) {
         ?>
+            <div>
+            <div>
+                <h3><?php echo $userrow['titleCerts']; ?></h3>
+              </div>
+              <div>
+                <div>
+                  <h4>Share URL: </h4>
+                  <p><?php echo "192.168.100.100/show-certificate.php?id=" . $row['certId']; ?></p>
+                </div>
+              </div>
+            </div>
+          <?php
+          }
+        }
+        if (true) {
+          ?>
           <section class="section-default">
             <p>You dont have any certificates yet!</p>
             <br>
@@ -42,26 +70,26 @@ require 'header.php';
       ?>
 
       <h1>Certificates Emitted( Space available: <?php
-                                    require 'includes/dbh.inc.php';
+                                                  require 'includes/dbh.inc.php';
 
-                                    $sql = "SELECT * FROM users WHERE idUsers=?;";
-                                    $stmt = mysqli_stmt_init($conn);
+                                                  $sql = "SELECT * FROM users WHERE idUsers=?;";
+                                                  $stmt = mysqli_stmt_init($conn);
 
-                                    if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                      header("Location: ../certificates.php?error=sqlerror");
-                                      exit();
-                                    } else {
-                                      mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
-                                      mysqli_stmt_execute($stmt);
-                                      $result = mysqli_stmt_get_result($stmt);
-                                      if ($userrow = mysqli_fetch_assoc($result)) {
-                                        echo $userrow['certificatesAv'];
-                                      } else {
-                                        header("Location: ../login.php?error=nouser");
-                                        exit();
-                                      }
-                                    }
-                                    ?>)</h1>
+                                                  if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                                    header("Location: ../certificates.php?error=sqlerror");
+                                                    exit();
+                                                  } else {
+                                                    mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
+                                                    mysqli_stmt_execute($stmt);
+                                                    $result = mysqli_stmt_get_result($stmt);
+                                                    if ($userrow = mysqli_fetch_assoc($result)) {
+                                                      echo $userrow['certificatesAv'];
+                                                    } else {
+                                                      header("Location: ../login.php?error=nouser");
+                                                      exit();
+                                                    }
+                                                  }
+                                                  ?>)</h1>
       <hr>
 
       <div>
@@ -97,7 +125,7 @@ require 'header.php';
                 <div>
                   <h4>Add more space</h4>
                   <form action="includes/add-space.inc.php" method="post">
-                    <input type="hidden" name="id" value=<?php echo $row['certId'];?>>
+                    <input type="hidden" name="id" value=<?php echo $row['certId']; ?>>
                     <input type="number" name="addup" min="1" max="<?php echo $userrow['certificatesAv']; ?>">
                     <button type="submit" name="addup-submit">Add</button>
                   </form>
