@@ -24,7 +24,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             if ($rowissuer = mysqli_fetch_assoc($result)) {
                 
                 ?><p><?php echo $rowissuer['issuerCerts'];?></p><?php
-                echo "<p>".shell_exec('python3 includes/scripts/generateCert.py -f 001.png -n '. $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c '.$row['idCerts'])."</p>";
+                shell_exec('python3 includes/scripts/generateCert.py -f 001.png -n '. $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c '.$row['idCerts']);
                 ?>
                 <img src="">
                 <?php
