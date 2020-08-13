@@ -22,11 +22,10 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($rowissuer = mysqli_fetch_assoc($result)) {
-                
                 ?><p><?php echo $rowissuer['issuerCerts'];?></p><?php
-                shell_exec('python3 includes/scripts/generateCert.py -f 001.png -n '. $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c '.$row['idCerts']);
+                $result = exec('/usr/bin/python3 /var/www/html/includes/scripts/generateCert.py -f 001.png -n '. $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c '.$row['idCerts'].' 2>&1');
                 ?>
-                <img src="includes/scripts/certificates/temp/Cert<?php echo $_GET['id'];?>.png">
+                <img src="includes/scripts/certificates/temp/Cert<?php echo $_GET['id'];?>.png" >
                 <?php
             }else{
                 header("Location: certificates.php?error=nocert");

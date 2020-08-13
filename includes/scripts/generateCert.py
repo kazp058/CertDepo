@@ -19,12 +19,11 @@ def getparam(line):
 line = sys.argv[1:]
 
 imagename, username, title, token, issuerName, idcert = getparam(line)
-path = os.path.join( os.getcwd(), "certificates/")
+path = os.path.join( os.getcwd(), "includes/scripts/certificates/")
 
 if imagename == '001.png':
-    image = Image.open(path + "001.png")
+    image = Image.open(path+'001.png')
     back_im = image.copy()
-
     qr = qrcode.QRCode(version=1,
                    error_correction=qrcode.constants.ERROR_CORRECT_L,
                    box_size=10,
@@ -36,15 +35,17 @@ if imagename == '001.png':
     back_im.paste(qrimg,(0,0))
     draw = ImageDraw.Draw(back_im)
 
-    font = ImageFont.truetype('tw-cen-mt-6.ttf', size=200)
+    fontpath = '/var/www/html/includes/scripts/tw-cen-mt-6.ttf'
+    font = ImageFont.truetype(fontpath, size=200)
     draw.text((200, 500), issuerName, fill='rgb(0,0,0)', font=font)
     color = 'rgb(7,75,114)'
     draw.text((200, 900), username, fill=color, font=font)
-    font = ImageFont.truetype('tw-cen-mt-6.ttf', size=110)
+    font = ImageFont.truetype(fontpath, size=110)
     draw.text((200, 1350), title, fill=color, font=font)
     draw.text((200, 2000), token, fill=color, font=font)
 
     filename = 'Cert' + str(idcert) + '.png'
 
     back_im = back_im.convert('RGB')
-    back_im.save(os.path.join(path,"temp/"+filename),'PNG')
+    #raise Exception(os.getcwd())
+    back_im.save("includes/scripts/certificates/temp/"+filename,'PNG')
