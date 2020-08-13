@@ -47,15 +47,15 @@ require 'header.php';
                   document.getElementById("username").value = "<?php echo $_SESSION['userUid'] ?>";
                   document.getElementById("email").value = "<?php echo $_SESSION['userMail'] ?>";
 
-                  document.getElementById("username").disabled = true;
-                  document.getElementById("email").disabled = true;
+                  document.getElementById("username").readOnly=true;
+                  document.getElementById("email").readOnly=true;
 
                } else {
                   document.getElementById("username").value = " ";
                   document.getElementById("email").value = " ";
 
-                  document.getElementById("username").disabled = false;
-                  document.getElementById("email").disabled = false;
+                  document.getElementById("username").readOnly=false;
+                  document.getElementById("email").readOnly=false;
 
                }
             }
