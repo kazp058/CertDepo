@@ -5,27 +5,55 @@ require 'header.php';
 <main>
   <div class="wrapper-main">
     <section class="section-default">
-      <h1>Search certificates</h1>
-      <hr>
-
-      <form action="includes/search.inc.php" method="post">
-        <p>Key</p>
-        <input type="text" name="key">
-        <button class="highlight-button" type="submit" name="search-submit">Search</button>
-      </form>
-
+      <div class="title">
+        <h1>Search certificates</h1>
+        <hr>
+      </div>
+      <div class="formulary">
+        <form action="includes/search.inc.php" method="post">
+          <p>Token</p>
+          <input type="text" name="key">
+          <button class="highlight-button" type="submit" name="search-submit">Search</button>
+        </form>
+      </div>
     </section>
 
     <section class="section-default">
       <?php
-      if (isset($_GET['token'])) {
-        $command = escapeshellcmd('includes/scripts/generateCert.py');
-        shell_exec($command);
+      if (isset($_GET['id'])) {
+        require 'includes/dbh.inc.php';
+        $sql = "SELECT * FROM certs WHERE idCerts=?;";
+        $stmt = mysqli_stmt_init($conn_certs);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+          header("Location: ../certificates.php?id=" . $_GET['id'] . "error=sqlerror");
+          exit();
+        } else {
+          mysqli_stmt_bind_param($stmt, "s", $_GET['id']);
+          mysqli_stmt_execute($stmt);
+          $result = mysqli_stmt_get_result($stmt);
+          if ($row = mysqli_fetch_assoc($result)) {
+
+            $sql = "SELECT * FROM certscompany WHERE certId=?;";
+            $stmt = mysqli_stmt_init($conn_certs);
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+              header("Location: ../certificates.php?id=" . $_GET['id'] . "error=sqlerror");
+              exit();
+            } else {
+              mysqli_stmt_bind_param($stmt, "s", $row['issuerCerts']);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              if ($rowissuer = mysqli_fetch_assoc($result)) {
+                $command = escapeshellcmd('includes/scripts/generateCert.py 001.png ' . $row['userName'] . ' ' . $row['titleCerts'] . ' ' . $row['tokenCerts'] . ' '. $rowissuer['issuerName']);
+                shell_exec($command);
+                
+              }
+            }
+          }
+        }
       ?>
 
         <img src="includes/Test_.jpg" alt="Test">
         <?php
-
 
         if (isset($_GET['claimed']) && !$_SESSION['isCompany']) {
           if (isset($_SESSION['userId'])) {
@@ -141,11 +169,11 @@ require 'header.php';
               <div>
                 <div>
                   <h4>URL:</h4>
-                  <p><?php echo "192.168.100.100/survey.php?id=".$row['certId'];?></p>
+                  <p><?php echo "192.168.100.100/survey.php?id=" . $row['certId']; ?></p>
                 </div>
                 <div>
                   <h4>Certificates:</h4>
-                  <p><?php echo $row['certsCreated']."|".$row['certsAssigned'];?></p>
+                  <p><?php echo $row['certsCreated'] . "|" . $row['certsAssigned']; ?></p>
                 </div>
               </div>
             </div>
