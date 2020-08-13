@@ -1,12 +1,8 @@
 #!/usr/bin/python3.7
-<<<<<<< HEAD
-print("F")
 
-=======
 from PIL import Image, ImageDraw, ImageFont
 import string
 import sys
-
 
 def generateCert(image, name, title, token, issuer):
     image = Image.open("certificados/" + image)
