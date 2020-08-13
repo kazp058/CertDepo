@@ -1,6 +1,6 @@
 #!/usr/bin/python3.7
 
-#from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import string
 import sys
     #image = Image.open("certificados/" + image)
