@@ -9,10 +9,13 @@ require 'header.php';
          if (isset($_SESSION['userId'])) {
          ?>
             <div>
-               <a href="request-company-status.php">
-                  <p>Request Company Status</p>
-               </a>
-               <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
+               <form action="includes/change-status.php" method="post">
+                  <input type="hidden" value="<?php echo $_SESSION['userId'];?>" name="id">
+                  <button type="submit" name="change-submit">
+                     <p>Request Company Status</p>
+                  </button>
+                  <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
+               </form>
             </div>
          <?php
          } else {
@@ -22,7 +25,7 @@ require 'header.php';
                   <p>Request Company Status</p>
                </a>
                <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
-               <p>Login to request your company status.</p>
+               <p>Log in to request your company status.</p>
             </div>
          <?php
          }
