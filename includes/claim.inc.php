@@ -13,7 +13,7 @@ if (isset($_POST['claim-submit'])) {
     exit();
   } else {
 
-    $sql = "SELECT * FROM certs WHERE token=?;";
+    $sql = "SELECT * FROM certs WHERE tokenCerts=?;";
     $stmt = mysqli_stmt_init($conn_certs);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -26,8 +26,8 @@ if (isset($_POST['claim-submit'])) {
       $result = mysqli_stmt_get_result($stmt);
 
       if ($row = mysqli_fetch_assoc($result)) {
-        if ($row['claimcode'] == $claim) {
-          $sql = "UPDATE certs SET userId=? WHERE token=?;";
+        if ($row['claimCerts'] == $claim) {
+          $sql = "UPDATE certs SET userId=? WHERE tokenCerts=?;";
           $stmt = mysqli_stmt_init($conn_certs);
 
           if (!mysqli_stmt_prepare($stmt, $sql)) {
