@@ -54,8 +54,8 @@ require 'header.php';
                                       mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
                                       mysqli_stmt_execute($stmt);
                                       $result = mysqli_stmt_get_result($stmt);
-                                      if ($row = mysqli_fetch_assoc($result)) {
-                                        echo $row['certificatesAv'];
+                                      if ($userrow = mysqli_fetch_assoc($result)) {
+                                        echo $userrow['certificatesAv'];
                                       } else {
                                         header("Location: ../login.php?error=nouser");
                                         exit();
@@ -72,7 +72,7 @@ require 'header.php';
           $stmt = mysqli_stmt_init($conn_certs);
 
           if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../certificates.php?error=sqlerrorCCCC");
+            header("Location: ../certificates.php?error=sqlerror");
             exit();
           } else {
             mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
@@ -93,6 +93,14 @@ require 'header.php';
                 <div>
                   <h4>Certificates:</h4>
                   <p><?php echo $row['certsCreated'] . "|" . $row['certsAssigned']; ?></p>
+                </div>
+                <div>
+                  <h4>Add more space</h4>
+                  <form action="includes/add-space.inc.php" method="post">
+                    <input type="hidden" name="id" value=<?php echo $row['certId'];?>>
+                    <input type="number" name="addup" min="1" max="<?php echo $userrow['certificatesAv']; ?>">
+                    <button type="submit" name="addup-submit">Add</button>
+                  </form>
                 </div>
               </div>
             </div>
