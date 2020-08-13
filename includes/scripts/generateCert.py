@@ -20,7 +20,7 @@ def getparam(line):
 line = sys.argv[1:]
 
 imagename, username, title, token, issuerName, idcert = getparam(line)
-
+print(os.getcwd())
 if imagename == '001.png':
     image = Image.open("includes\\scripts\\certificates\\001.png")
     back_im = image.copy()
