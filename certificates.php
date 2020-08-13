@@ -29,16 +29,21 @@ require 'header.php';
 
         $sql = "SELECT * FROM certs WHERE userCerts=?;";
         $stmt = mysqli_stmt_init($conn_certs);
+        $stmt2 = mysqli_stmt_init($conn_certs);
 
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
+        if (!mysqli_stmt_prepare($stmt, $sql) || !mysqli_stmt_prepare($stmt2, $sql)) {
           header("Location: ../certificates.php?error=sqlerror");
           exit();
         } else {
           mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
           mysqli_stmt_execute($stmt);
           $result = mysqli_stmt_get_result($stmt);
-          mysqli_stmt_store_result($stmt);
-          $rows = mysqli_stmt_num_rows($stmt);
+
+          
+          mysqli_stmt_bind_param($stmt2, "s", $_SESSION['userId']);
+          mysqli_stmt_execute($stmt2);
+          mysqli_stmt_store_result($stmt2);
+          $rows = mysqli_stmt_num_rows($stmt2);
           if ($rows != 0) {
             while ($userrow = $result->fetch_assoc()) {
         ?>
