@@ -11,7 +11,7 @@ session_start();
    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
    <title>Certificates</title>
    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
-   <!--<link rel="stylesheet" href="style.css">--->
+   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
