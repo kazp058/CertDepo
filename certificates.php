@@ -48,7 +48,7 @@ require 'header.php';
                                 $stmt = mysqli_stmt_init($conn_certs);
 
                                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                  header("Location: ../certificates.php?error=sqlerror");
+                                  header("Location: ../certificates.php?error=sqlerrorBBB");
                                   exit();
                                 } else {
                                   mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
@@ -64,7 +64,7 @@ require 'header.php';
                                     $stmt = mysqli_stmt_init($conn);
 
                                     if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                      header("Location: ../certificates.php?error=sqlerror");
+                                      header("Location: ../certificates.php?error=sqlerrorAAA");
                                       exit();
                                     } else {
                                       mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
@@ -88,7 +88,7 @@ require 'header.php';
           $stmt = mysqli_stmt_init($conn_certs);
 
           if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../certificates.php?error=sqlerror");
+            header("Location: ../certificates.php?error=sqlerrorCCCC");
             exit();
           } else {
             mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
