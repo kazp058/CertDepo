@@ -36,8 +36,8 @@ require 'header.php';
         } else {
           mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
           mysqli_stmt_execute($stmt);
-          mysqli_stmt_store_result($stmt);
           $result = mysqli_stmt_get_result($stmt);
+          mysqli_stmt_store_result($stmt);
           $rows = mysqli_stmt_num_rows($stmt);
           if ($rows != 0) {
             while ($userrow = $result->fetch_assoc()) {
