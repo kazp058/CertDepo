@@ -28,4 +28,3 @@ line = sys.argv[0]
 line = line.split(',')
 
 generateCert(linea[0], linea[1], linea[2], linea[3], linea[4])
->>>>>>> baf046aeb5be9b28302f1b8ce470cfaf13032806
