@@ -1,3 +1,5 @@
 #Ignore these files
 
 includes/credentials.php
+includes/scripts/cretificates/temp
+
