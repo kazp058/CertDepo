@@ -25,7 +25,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("show-certificate.php?id=8&F");
                 $command = escapeshellcmd('includes/scripts/generateCert.py 001.png '. $row['userName'] . ' ' . $row['titleCerts'] . ' ' . $row['tokenCerts'] . ' ' . $rowissuer['issuerName']);
 ?>
-                <img src="<?php echo 'includes/scripts/certificates/temp/'.$row['tokenCerts'];?>" alt="Certificate of <?php echo $row["userName"]?>">
+                <img src="<?php echo 'includes/scripts/certificates/temp/'.$row['tokenCerts'].".png";?>" alt="Certificate of <?php echo $row["userName"]?>">
 <?php
             }
         }
