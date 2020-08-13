@@ -45,7 +45,7 @@ require 'header.php';
                                 require 'includes/dbh.inc.php';
 
                                 $sql = "SELECT * FROM certscompany WHERE issuerCerts=?;";
-                                $stmt = mysqli_stmt_init($conn);
+                                $stmt = mysqli_stmt_init($conn_certs);
 
                                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                                   header("Location: ../certificates.php?error=sqlerroraa");
