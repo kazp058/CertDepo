@@ -20,8 +20,10 @@ import getopt
     #image = image.convert('RGB')
     #image.save(filename)
 
+
 line = sys.argv[1:]
-#filename, name, title, token, issuer = getopt.getopt(line, 'f:n:t:k:i:')
+filename, name, title, token, issuer = getopt.getopt(line, 'f:n:t:k:i: ')
 
 print(line)
+print(filename)
 #generateCert(line[0], line[1], line[2], line[3], line[4])
