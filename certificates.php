@@ -36,34 +36,37 @@ require 'header.php';
         } else {
           mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
           mysqli_stmt_execute($stmt);
+          mysqli_stmt_store_result($stmt);
           $result = mysqli_stmt_get_result($stmt);
-          while ($userrow = $result->fetch_assoc()) {
+          $rows = mysqli_stmt_num_rows($stmt);
+          if ($rows == 0) {
+            while ($userrow = $result->fetch_assoc()) {
         ?>
-            <div>
-            <div>
-                <h3><?php echo $userrow['titleCerts']; ?></h3>
-              </div>
               <div>
                 <div>
-                  <h4>Share URL: </h4>
-                  <p><?php echo "192.168.100.100/show-certificate.php?id=" . $userrow['certId']; ?></p>
+                  <h3><?php echo $userrow['titleCerts']; ?></h3>
+                </div>
+                <div>
+                  <div>
+                    <h4>Share URL: </h4>
+                    <p><?php echo "192.168.100.100/show-certificate.php?id=" . $userrow['userId']; ?></p>
+                  </div>
                 </div>
               </div>
-            </div>
-          <?php
-          }
-        }
-        if (true) {
-          ?>
-          <section class="section-default">
-            <p>You dont have any certificates yet!</p>
-            <br>
             <?php
-            if ($_SESSION['isCompany']) {
+            }
+          } else {
             ?>
-              <a class="highlight-link" href="create-certificate.php">Create new certificate</a>
-          </section>
+            <section class="section-default">
+              <p>You dont have any certificates yet!</p>
+              <br>
+              <?php
+              if ($_SESSION['isCompany']) {
+              ?>
+                <a class="highlight-link" href="create-certificate.php">Create new certificate</a>
+            </section>
       <?php
+              }
             }
           }
         } else if (isset($_SESSION['userId']) && $_SESSION['isCompany']) {
