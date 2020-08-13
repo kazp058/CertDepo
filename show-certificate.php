@@ -26,7 +26,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                 $command = escapeshellcmd('includes/scripts/generateCert.py 001.png '. $row['userName'] . ' ' . $row['titleCerts'] . ' ' . $row['tokenCerts'] . ' ' . $rowissuer['issuerName']);
 ?>
                 <p>
-                    <?php echo shell_exec('python includes/scripts/generateCert.py -f 001.png -n '. $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName']); ?>
+                    <?php echo shell_exec('python3 includes/scripts/generateCert.py -f 001.png -n '. $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName']); ?>
                 </p>
 <?php
             }
