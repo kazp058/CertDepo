@@ -20,6 +20,7 @@ def generateCert(image, name, title, token, issuer):
     image = image.convert('RGB')
     image.save(filename)
 
+print("F")
 
 image = sys.argv[0]
 name = sys.argv[1]
