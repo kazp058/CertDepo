@@ -102,7 +102,7 @@ if (isset($_POST['survey-submit'])) {
 
                sendmail($to, $subject, $message);
 
-               header("Location: ../survey.php?id=" . $id . "&success=cert".$name.$mail.$token.$claim);
+               header("Location: ../survey.php?id=" . $id . "&success=cert");
                exit();
             }
          } else {
