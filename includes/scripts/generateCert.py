@@ -19,7 +19,7 @@ def getparam(line):
 line = sys.argv[1:]
 
 imagename, username, title, token, issuerName, idcert = getparam(line)
-path = os.path.join( os.getcwd(), "includes\\scripts\\certificates\\")
+path = os.path.join( os.getcwd(), "includes/scripts/certificates/")
 
 if imagename == '001.png':
     image = Image.open(path + "001.png")
@@ -47,4 +47,4 @@ if imagename == '001.png':
     filename = 'Cert' + str(idcert) + '.png'
 
     back_im = back_im.convert('RGB')
-    back_im.save(os.path.join(path,"temp\\"+filename),'PNG')
+    back_im.save(os.path.join(path,"temp/"+filename),'PNG')
