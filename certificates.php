@@ -56,7 +56,7 @@ require 'header.php';
                                   $result = mysqli_stmt_get_result($stmt);
                                   $num = 0;
                                   while ($row = $result->fetch_assoc()){
-                                    $certId =  $row['certId'];
+                                    $id =  $row['certId'];
 
                                     $sql = "SELECT * FROM certs WHERE issuerCerts=?;";
                                     $stmt = mysqli_stmt_init($conn_certs);
@@ -65,7 +65,7 @@ require 'header.php';
                                       header("Location: ../certificates.php?error=sqlerrorCC");
                                       exit();
                                     } else {
-                                      mysqli_stmt_bind_param($stmt, "s", $certId);
+                                      mysqli_stmt_bind_param($stmt, "s", $id);
                                       mysqli_stmt_execute($stmt);
                                       $result = mysqli_stmt_get_result($stmt);
                                       $num += mysqli_num_rows($result);
