@@ -34,7 +34,7 @@ if (isset($_POST['claim-submit'])) {
             header("Location: ../certificates.php?error=sql");
             exit();
           } else {
-            mysqli_stmt_bind_params($stmt, "ss", $id, $token);
+            mysqli_stmt_bind_param($stmt, "ss", $id, $token);
             mysqli_stmt_execute($stmt);
 
             header("Location: ../certificates.php?claimed=success");
