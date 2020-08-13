@@ -39,7 +39,7 @@ require 'header.php';
           mysqli_stmt_store_result($stmt);
           $result = mysqli_stmt_get_result($stmt);
           $rows = mysqli_stmt_num_rows($stmt);
-          if ($rows == 0) {
+          if ($rows != 0) {
             while ($userrow = $result->fetch_assoc()) {
         ?>
               <div>
