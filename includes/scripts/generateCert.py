@@ -22,7 +22,7 @@ line = sys.argv[1:]
 imagename, username, title, token, issuerName, idcert = getparam(line)
 
 if imagename == '001.png':
-    image = Image.open("includes\\scripts\\certificates\\001.png")
+    image = Image.open("includes/scripts/certificates/001.png")
     
     back_im = image.copy()
 
@@ -49,4 +49,4 @@ if imagename == '001.png':
     filename = 'Certificado_' + token + '.png'
 
     back_im = back_im.convert('RGB')
-    back_im.save(filename)
+    back_im.save('includes/scripts/certificates/temp/'+filename)
