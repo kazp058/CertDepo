@@ -33,7 +33,9 @@ require 'header.php';
                             <div>
                                 <h2><?php echo $row['titleCerts']; ?></h2>
                                 <div>
-                                    <p>Reciever:<?php echo $row['userName']; ?></p>
+                                    <p>Reciever: <?php echo $row['userName']; ?></p>
+                                    <p>Certificate granted by: <?php echo $rowissuer['issuerName'];?></p>
+                                    <p>Validation token: <?php echo $row['tokenCerts'];?></p>
                                 </div>
                             </div>
                             <div>
