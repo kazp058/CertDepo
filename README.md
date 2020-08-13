@@ -45,7 +45,7 @@ CREATE DATABASE db_name;
 Creation command:
 
 ``` mysql
-CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUsers TEXT NOT NULL , emailUsers TEXT NOT NULL , isCompany BOOLEAN NOT NULL DEFAULT FALSE , pwdUsers LONGTEXT NOT NULL, logo TEXT NULL, assignedCerts JSON NOT NULL , madeCerts JSON NOT NULL);
+CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUsers TEXT NOT NULL , emailUsers TEXT NOT NULL , isCompany BOOLEAN NOT NULL DEFAULT FALSE , pwdUsers LONGTEXT NOT NULL, logo TEXT NULL, assignedCerts JSON NOT NULL , madeCerts JSON NOT NULL, certificatesAv INT NOT NULL DEFAULT 0);
 ```
 
 |Field name|Description|Data type|
@@ -81,7 +81,7 @@ CREATE TABLE pwdreset ( pwdResetId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 ### certs
 
 ``` mysql
-CREATE TABLE certificatesdb( idCerts INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, titleCerts TEXT NOT NULL , issuerCerts INT(11) NOT NULL , userCerts INT(11) NOT NULL , tokenCerts LONGTEXT NOT NULL , claimCerts INT(6) NOT NULL , imageCert TEXT NOT NULL , dateCert INT NOT NULL, isClaimed BOOLEAN NOT NULL DEFAULT FALSE)
+CREATE TABLE certs( idCerts INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, titleCerts TEXT NOT NULL , userName TEXT NOT NULL, certMail TEXT NOT NULL, issuerCerts INT(11) NOT NULL , userCerts INT(11) NULL , tokenCerts LONGTEXT NOT NULL , claimCerts INT(6) NOT NULL , imageCert TEXT NOT NULL , dateCert TEXT NOT NULL, isClaimed BOOLEAN NOT NULL DEFAULT FALSE);
 ```
 
 |Field name|Description|Data type|
@@ -99,7 +99,7 @@ CREATE TABLE certificatesdb( idCerts INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY
 ### certsCompany
 
 ``` mysql
-CREATE TABLE `certificatesdb`.`certscompany` ( `certId` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , `titleCerts` TEXT NOT NULL , `dateCert` INT NOT NULL , `certsCreated` INT(11) NOT NULL , `certsAssigned` INT(11) NOT NULL);
+CREATE TABLE certscompany( certId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , titleCerts TEXT NOT NULL , dateCert TEXT NOT NULL , certsCreated INT NULL , certsAssigned INT NULL, issuerCerts INT(11) NOT NULL, issuerName TEXT NOT NULL, emailCert TEXT NOT NULL, gatherType TEXT NOT NULL);
 ```
 
 |Field name|Description|Data type|
