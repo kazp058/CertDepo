@@ -3,9 +3,8 @@
 from PIL import Image, ImageDraw, ImageFont
 import string
 import sys
+import getopt
 
-def generateCert(image, name, title, token, issuer):
-    print("F")
     #image = Image.open("certificados/" + image)
     #draw = ImageDraw.Draw(image)
 
@@ -21,9 +20,7 @@ def generateCert(image, name, title, token, issuer):
     #image = image.convert('RGB')
     #image.save(filename)
 
-line = sys.argv[0]
-print(line)
-line = line.split(',')
-print(line)
+line = sys.argv[1:]
+filename, name, title, token, issuer = getopt.getopt(line, 'f:n:t:k:i:')
 
 #generateCert(line[0], line[1], line[2], line[3], line[4])
