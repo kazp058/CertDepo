@@ -23,7 +23,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             $result = mysqli_stmt_get_result($stmt);
             if ($rowissuer = mysqli_fetch_assoc($result)) {
                 header("show-certificate.php?id=8&F");
-                $command = escapeshellcmd('includes/scripts/generateCert.py 001.png,'. $row['userName'] . ',' . $row['titleCerts'] . ',' . $row['tokenCerts'] . ',' . $rowissuer['issuerName']);
+                $command = escapeshellcmd('includes/scripts/generateCert.py a 001.png,'. $row['userName'] . ',' . $row['titleCerts'] . ',' . $row['tokenCerts'] . ',' . $rowissuer['issuerName']);
 ?>
                 <p>
                     <?php echo shell_exec('python includes/scripts/generateCert.py'); ?>
