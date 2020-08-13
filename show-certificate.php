@@ -36,6 +36,18 @@ require 'header.php';
                                     <p>Reciever: <?php echo $row['userName']; ?></p>
                                     <p>Certificate granted by: <?php echo $rowissuer['issuerName'];?></p>
                                     <p>Validation token: <?php echo $row['tokenCerts'];?></p>
+                                    <?php
+                                        if($row['isClaimed'] == 0){
+                                            ?>
+                                            <form action="includes/claim.inc.php" method="post">
+                                                <input type="hidden" name="token" value= "<?php echo $row['tokenCerts'];?>">
+                                                <input type="number" name="claim" min=100000 max=999999>
+                                                <input type="hidden" name="userId" value= "<?php echo $_SESSION['userId'];?>">
+                                                <button type="submit" name="claim-submit">Claim</button>
+                                            </form>
+                                            <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
                             <div>
