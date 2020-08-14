@@ -12,7 +12,7 @@ require "header.php";
          <?php
          } else {
          ?>
-            <p class="login-status">You are logged out!</p>
+            <p class="login-status">Yoaau are logged out!</p>
          <?php
          }
          ?>
