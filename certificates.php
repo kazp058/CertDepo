@@ -32,7 +32,7 @@ require 'header.php';
         $stmt2 = mysqli_stmt_init($conn_certs);
 
         if (!mysqli_stmt_prepare($stmt, $sql) || !mysqli_stmt_prepare($stmt2, $sql)) {
-
+          echo "<p>You dont have any certificates yet!</p>";
         } else {
           mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
           mysqli_stmt_execute($stmt);
