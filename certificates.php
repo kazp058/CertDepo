@@ -31,6 +31,7 @@ require 'header.php';
         $stmt2 = mysqli_stmt_init($conn_certs);
 
         if (!mysqli_stmt_prepare($stmt, $sql) || !mysqli_stmt_prepare($stmt2, $sql)) {
+          echo "<p>F</p>";
           header("Location: certificates.php?error=sqlerror");
           exit();
         } else {
