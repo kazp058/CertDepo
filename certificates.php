@@ -1,7 +1,6 @@
 <?php
 require 'header.php';
 ?>
-
 <main>
   <div class="wrapper-main">
     <section class="section-default">
@@ -75,7 +74,6 @@ require 'header.php';
           }
         } else if (isset($_SESSION['userId']) && $_SESSION['isCompany']) {
       ?>
-
       <h1>Certificates Emitted( Space available: <?php
                                                   require 'includes/dbh.inc.php';
 
@@ -115,7 +113,6 @@ require 'header.php';
             $result = mysqli_stmt_get_result($stmt);
             while ($row = $result->fetch_assoc()) {
         ?>
-
             <div>
               <div>
                 <h3><?php echo $row['titleCerts']; ?></h3>
@@ -139,7 +136,6 @@ require 'header.php';
                 </div>
               </div>
             </div>
-
         <?php
             }
           }
@@ -157,7 +153,6 @@ require 'header.php';
     </section>
   </div>
 </main>
-
 <?php
 require 'footer.php';
 ?>
