@@ -5,7 +5,7 @@ session_start();
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Optimal Internet Explorer compatibility -->
    <title>Certificates</title>
    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
