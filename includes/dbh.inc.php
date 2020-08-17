@@ -1,6 +1,7 @@
 <?php
 
 $servername= "localhost";
+
 $dBUsername="server";
 $dBPassword="server";
 
