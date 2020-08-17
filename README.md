@@ -45,7 +45,7 @@ CREATE DATABASE db_name;
 Creation command:
 
 ``` mysql
-CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUsers TEXT NOT NULL , emailUsers TEXT NOT NULL , isCompany BOOLEAN NOT NULL DEFAULT FALSE , pwdUsers LONGTEXT NOT NULL, logo TEXT NULL, assignedCerts JSON NOT NULL , madeCerts JSON NOT NULL, certificatesAv INT NOT NULL DEFAULT 0);
+CREATE TABLE users ( idUsers INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY , uidUsers TEXT NOT NULL , emailUsers TEXT NOT NULL , isCompany BOOLEAN NOT NULL DEFAULT FALSE , pwdUsers LONGTEXT NOT NULL, logo TEXT NULL, certificatesAv INT NOT NULL DEFAULT 0);
 ```
 
 |Field name|Description|Data type|
