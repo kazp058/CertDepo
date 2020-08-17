@@ -1,9 +1,7 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html>
 <html Lang="en">
-
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
