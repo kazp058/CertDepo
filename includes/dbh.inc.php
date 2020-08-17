@@ -1,8 +1,8 @@
 <?php
 
 $servername= "localhost";
-$dBUsername="root";
-$dBPassword="admin";
+$dBUsername="server";
+$dBPassword="server";
 
 $dBName= "loginsystem";
 
