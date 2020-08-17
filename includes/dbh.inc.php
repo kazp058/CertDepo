@@ -2,7 +2,7 @@
 
 $servername= "localhost";
 $dBUsername="root";
-$dBPassword="admin";
+$dBPassword="Ero14a5S";
 
 $dBName= "loginsystem";
 
