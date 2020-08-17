@@ -62,14 +62,7 @@ require 'header.php';
             ?>
             <section class="section-default">
               <p>You dont have any certificates yet!</p>
-              <br>
               <?php
-              if ($_SESSION['isCompany']) {
-              ?>
-                <a class="highlight-link" href="create-certificate.php">Create new certificate</a>
-            </section>
-      <?php
-              }
             }
           }
         } else if (isset($_SESSION['userId']) && $_SESSION['isCompany']) {
