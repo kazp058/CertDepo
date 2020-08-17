@@ -2,6 +2,7 @@
 session_start();
 ?>
 <html Lang="en">
+
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
@@ -65,3 +66,4 @@ session_start();
       </nav>
    </header>
    <script src="app.js"></script>
+</html>
