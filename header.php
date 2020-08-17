@@ -68,4 +68,3 @@ session_start();
       </nav>
    </header>
    <script src="app.js"></script>
-</body>
