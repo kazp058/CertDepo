@@ -35,7 +35,7 @@ require 'header.php';
 
           header("Location: certificates.php?error=sqlerror");
           echo "<p>F</p>";
-          exit();
+          echo "<p>F</p>";
         } else {
           mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
           mysqli_stmt_execute($stmt);
