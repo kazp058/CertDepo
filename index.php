@@ -4,7 +4,7 @@ require "header.php";
 
 <main>
    <div class="wrapper-main">
-      <section class="section-default">
+      <section class="section-index">
          <?php
          if (isset($_SESSION["userId"])) {
          ?>
