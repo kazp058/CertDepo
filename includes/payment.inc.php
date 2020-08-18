@@ -25,7 +25,7 @@ else
 
 curl_close($ch);
 
-require __DIR__ . '/vendor/autoload.php';
+require 'Checkout-PHP-SDK/vendor/autoload.php';
 use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use PayPalCheckoutSdk\Core\SandboxEnvironment;
 // Creating an environment
