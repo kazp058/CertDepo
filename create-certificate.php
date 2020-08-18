@@ -147,7 +147,7 @@ require 'header.php';
 
                         if ($row['certificatesAv'] == 0) {
                            echo "<p>You dont have space available, buy space</p>";
-                           echo '<a href="buy-certificates.php">Buy Certificates</a>';
+                           echo '<a href="pricing.php">Buy Certificates</a>';
                         } else {
                   ?>
                            <input type='number' name='assignedcert' min="1" max="<?php echo $row['certificatesAv']; ?>">
@@ -163,7 +163,7 @@ require 'header.php';
                </div>
             </div>
             <button class="highlight-button" type="submit" name="certificate-submit">Create certificate</button>
-            <a href="buy-certificates.php">Buy Certificates</a>
+            <a href="pricing.php">Buy Certificates</a>
             <input type="hidden" name="uid" value="<?php echo $_SESSION['userId']; ?>">
          </form>
       </section>

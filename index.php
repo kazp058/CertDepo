@@ -8,7 +8,10 @@ require "header.php";
          <?php
          if (isset($_SESSION["userId"])) {
          ?>
-            <p class="login-status">You are loggedin!</p>
+            <div class="info">
+               <h3>Welcome back!</h3>
+               <p>Start claiming or issuing certificates. Remember that claiming certificates if free, and issuing them is easy. Start Now!</p>
+            </div>
          <?php
          } else {
          ?>

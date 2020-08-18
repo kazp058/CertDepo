@@ -39,9 +39,14 @@ require "header.php";
         <?php
         if (isset($_SESSION["userId"])) {
         ?>
+        <div class="spacer"></div>
+        <div class="normal-form">
           <form action="includes/logout.inc.php" method="post">
+          <div class="buttons">
             <button type="submit" name="logout-submit">Logout</button>
+          </div>
           </form>
+        </div>
         <?php
         } else {
         ?>

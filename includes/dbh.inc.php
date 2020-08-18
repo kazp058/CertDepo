@@ -2,8 +2,8 @@
 
 $servername= "localhost";
 
-$dBUsername="server";
-$dBPassword="server";
+$dBUsername="root";
+$dBPassword="";
 
 $dBName= "loginsystem";
 

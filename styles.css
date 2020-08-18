@@ -29,8 +29,21 @@ p a {
     font-weight: bold;
 }
 
+h3 a {
+    background: #1d1d1d;
+    color: #faf9f9;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
 input {
     outline: none;
+}
+
+strong {
+    font-weight: bolder;
 }
 
 
@@ -151,6 +164,11 @@ header .logo strong {
     margin-bottom: 8px;
 }
 
+.info image {
+    width: 30%;
+    height: auto;
+}
+
 
 /*Splitters*/
 
@@ -242,7 +260,11 @@ footer .centered {
 }
 
 
-/* Section  */
+/* Spacer  */
+
+.spacer {
+    padding: 10px;
+}
 
 
 /* Sections */
@@ -258,7 +280,6 @@ footer .centered {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #faf9f9;
     margin: 30px 100px;
 }
 
@@ -268,6 +289,31 @@ footer .centered {
     align-items: center;
     margin: inherit;
     width: inherit;
+}
+
+
+/* Log Out Form */
+
+.logout-form {
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.logout-form button {
+    display: flex;
+    margin: auto;
+    width: 90px;
+    padding: 12px 16px;
+    color: #faf9f9;
+    background: #1d1d1d;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.logout-form button i {
+    margin-right: 3px;
 }
 
 
@@ -285,6 +331,12 @@ footer .centered {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 25px;
+}
+
+.form-container .title-left H3 {
+    margin: 10px 0PX;
+    font-weight: normal;
+    font-size: 15px;
 }
 
 .normal-form {
@@ -449,8 +501,19 @@ footer .centered {
     color: #f0eeee;
 }
 
+.search-form form .search-field input:-webkit-autofill,
+.search-form form .search-field input:-webkit-autofill:hover,
+.search-form form .search-field input:-webkit-autofill:focus,
+.search-form form .search-field input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #525252 inset !important;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #f0eeee !important;
+}
+
 .search-form form .search-field button {
-    background: #3b3b3b;
+    background: #1d1d1d;
     float: right;
     width: 40px;
     height: 40px;
@@ -459,4 +522,93 @@ footer .centered {
     outline: none;
     cursor: pointer;
     color: #f0eeee;
+}
+
+
+/* Section Table */
+
+.section-table {
+    margin-top: 100px;
+}
+
+.section-table h1 {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.section-default .section-table .grid-vertical {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-row-gap: 20px;
+}
+
+.section-default .section-table .grid-cert {
+    display: flex;
+    flex-direction: column;
+    background: #cacaca;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.section-default .section-table .grid-cert h3 {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.section-default .section-table .grid-cert .info-inline {
+    display: flex;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+.section-default .section-table .grid-cert .info-inline h4 {
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+.section-default .section-table .grid-cert .info-inline p {
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.section-default .section-table .grid-cert .info-inline input {
+    font-weight: normal;
+    margin-right: 10px;
+    background: #3b3b3b;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 5px 5px;
+    color: #faf9f9;
+    -moz-appearance: textfield;
+}
+
+.section-default .section-table .grid-cert .info-inline button {
+    background: #3b3b3b;
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #f0eeee;
+}
+
+.section-default .info-inline {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.section-default .info-inline div {
+    margin: auto;
 }
