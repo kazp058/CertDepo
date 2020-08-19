@@ -742,19 +742,6 @@ input::-webkit-inner-spin-button {
     .burger {
         display: block;
     }
-    form hr {
-        width: 100%;
-    }
-    .section-default {
-        text-align: center;
-    }
-    .section-default form {
-        width: 80%
-    }
-    .section-default .form-section {
-        align-items: center;
-        margin: 30px auto;
-    }
     .grid-vertical {
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto auto auto;
@@ -801,9 +788,6 @@ input::-webkit-inner-spin-button {
     }
     .burger {
         display: block;
-    }
-    .section-default form {
-        width: 100%;
     }
 }
 
