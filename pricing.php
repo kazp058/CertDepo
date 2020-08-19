@@ -1,8 +1,7 @@
 <?php
 require 'header.php';
 ?>
-<script src="https://www.paypal.com/sdk/js?client-id=AYEuYnrTMJSbENtLsULbIA-DHk7MYeDgAd_enuN2tYsLRgIi7TvsYZTQHx2vRuZkxjJ7AeLJjzGUQggu&currency=USD" data-sdk-integration-source="button-factory"></script>
-
+<script src="https://www.paypal.com/sdk/js?client-id=ASWTD2lnV8eW6xqTvZU6P2Pro2EbWLSKWiGKe52_FkaYi_-nGpjSyZvqJv4cRFCCAV74GN8jyn5kpKLe&currency=USD" data-sdk-integration-source="button-factory"></script>
 </script>
 <main>
     <section class="payment-container">
