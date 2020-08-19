@@ -164,8 +164,9 @@ header .logo strong {
     margin-bottom: 8px;
 }
 
-.info image {
-    width: 30%;
+.info .image {
+    display: flex;
+    width: 30px;
     height: auto;
 }
 
@@ -202,12 +203,14 @@ header .logo strong {
 
 .grid-vertical .grid-e .content {
     margin-left: 20px;
+    text-align: justify;
 }
 
 .grid-vertical .grid-e .content h3 {
     color: #1d1d1d;
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .grid-vertical .grid-e .content p {
@@ -314,6 +317,37 @@ footer .centered {
 
 .logout-form button i {
     margin-right: 3px;
+}
+
+
+/*Company Form*/
+
+.company-form {
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.company-form button {
+    display: flex;
+    margin: auto;
+    width: 200px;
+    padding: 12px 16px;
+    color: #faf9f9;
+    background: #1d1d1d;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.company-form button i {
+    margin-right: 5px;
+}
+
+.company-form p {
+    margin: 20px 0px;
 }
 
 
@@ -501,17 +535,6 @@ footer .centered {
     color: #f0eeee;
 }
 
-.search-form form .search-field input:-webkit-autofill,
-.search-form form .search-field input:-webkit-autofill:hover,
-.search-form form .search-field input:-webkit-autofill:focus,
-.search-form form .search-field input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #525252 inset !important;
-}
-
-input:-webkit-autofill {
-    -webkit-text-fill-color: #f0eeee !important;
-}
-
 .search-form form .search-field button {
     background: #1d1d1d;
     float: right;
@@ -611,4 +634,64 @@ input::-webkit-inner-spin-button {
 
 .section-default .info-inline div {
     margin: auto;
+}
+
+.payment-container .payment-form {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+.payment-form h3 {
+    color: #1d1d1d;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.payment-form .field {
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.payment-form .field .input-field {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
+
+.payment-form .field .payment-field {
+    margin: 20px 0px;
+}
+
+.payment-form .field .payment-field .slider {
+    -webkit-appearance: none;
+    margin: 20px 0px;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #525252;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #810000;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #810000;
+    cursor: pointer;
 }

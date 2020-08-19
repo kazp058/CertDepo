@@ -10,7 +10,7 @@ require "header.php";
          ?>
             <div class="info">
                <h3>Welcome back!</h3>
-               <p>Start claiming or issuing certificates. Remember that claiming certificates if free, and issuing them is easy. Start Now!</p>
+               <p>Start claiming or issuing certificates. Remember that claiming certificates its free, and issuing them is easy. Start Now!</p>
             </div>
          <?php
          } else {

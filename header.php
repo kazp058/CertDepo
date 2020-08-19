@@ -13,7 +13,6 @@ session_start();
    <link rel="stylesheet" href="styles.css">
 </head>
 <div class="page-container">
-
    <body>
       <header>
          <nav>
