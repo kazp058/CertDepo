@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <p>2020 Andean Development</p>
-                    <p>Made in Guayaquil, Ecuador</p>
+                    
                 </div>
             </div>
 
