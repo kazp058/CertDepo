@@ -35,7 +35,7 @@ if imagename == '001.png':
     back_im.paste(qrimg,(0,0))
     draw = ImageDraw.Draw(back_im)
 
-    fontpath = '/var/www/html/includes/scripts/tw-cen-mt-6.ttf'
+    fontpath = '/var/www/certdepo/includes/scripts/tw-cen-mt-6.ttf'
     font = ImageFont.truetype(fontpath, size=200)
     draw.text((200, 500), issuerName, fill='rgb(0,0,0)', font=font)
     color = 'rgb(7,75,114)'

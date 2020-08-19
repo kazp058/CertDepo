@@ -73,7 +73,7 @@ require 'header.php';
             return actions.order.capture().then(function(details) {
                 // This function shows a transaction success message to your buyer.
                 alert("Stand still, we are processing your order.");
-                window.location = "/AutomailOnline/includes/payment.inc.php?orderID=" + data.orderID + "&userID=<?php echo $_SESSION['userId']; ?>";
+                window.location = "/includes/payment.inc.php?orderID=" + data.orderID + "&userID=<?php echo $_SESSION['userId']; ?>";
             });
         }
     }).render('#paypal-button-container');

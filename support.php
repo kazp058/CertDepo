@@ -23,12 +23,14 @@ require 'header.php';
          <?php
          } else {
          ?>
-            <div>
-               <a href="login.php">
-                  <p>Request Company Status</p>
-               </a>
-               <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
-               <p>Log in to request your company status.</p>
+            <div class="company-form">
+               <form action="login.php" method="post">
+                  <button type="submit" name="change-submit">
+                     <i class="material-icons md-18">verified</i> Company Status
+                  </button>
+                  <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
+                  <p>Log in to request your company status.</p>
+               </form>
             </div>
          <?php
          }
