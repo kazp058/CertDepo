@@ -17,12 +17,13 @@ require 'header.php';
                 <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png" alt="Pay with PayPal, PayPal Credit or any major credit card" />
             </div>
         </div>
+
+
         <div class="payment-form">
             <h3>Package</h3>
             <div class="field">
                 <div class="info-field">
                     <p><span id="certsnum"></span><strong>   Certificates</strong></p>
-                    <h4></h4>
                 </div>
                 <div class="info-field">
                     <p>Total in USD$<span id="price"></span> </p>
@@ -30,9 +31,22 @@ require 'header.php';
                 <div class="payment-field">
                     <input type="range" min="100" max="500" value="120" class="slider" id="certs">
                 </div>
+                <?php
+        if(isset($_SESSION['isCompany']) && $_SESSION['isCompany']){
+        ?>
                 <div id="paypal-button-container">
                 </div>
+                <?php
+            }else{
+            ?>
+            <div class="info-field">
+                    <p><strong>Login into a company account to start buying Certificates</strong></p>
+                </div>
+            <?php
+            }
+            ?>
             </div>
+
     </section>
 </main>
 <script>
