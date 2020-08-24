@@ -3,8 +3,8 @@
 require 'dbh.inc.php';
 
 $ch = curl_init();
-$clientId = "ASWTD2lnV8eW6xqTvZU6P2Pro2EbWLSKWiGKe52_FkaYi_-nGpjSyZvqJv4cRFCCAV74GN8jyn5kpKLe";
-$secret = "EF-mH2AR5h-S2MpMkrITrz2s2RGvjVK_Z0J1yiCHZEHJV-D0eBisC20FW8ygHln3ygv4gkSL0Ehquovk";
+$clientId = "id";
+$secret = "token";
 
 curl_setopt($ch, CURLOPT_URL, "https://api.paypal.com/v1/oauth2/token");
 curl_setopt($ch, CURLOPT_HEADER, false);
