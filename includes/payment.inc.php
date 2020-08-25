@@ -3,6 +3,9 @@
 require 'dbh.inc.php';
 
 $ch = curl_init();
+
+
+require "credentials.php";
 $clientId = "id";
 $secret = "token";
 
@@ -47,7 +50,7 @@ if ($st == "COMPLETED" || $st == "APPROVED" || $st == "SAVED" || $st == "CREATED
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../pricing.php?error=sqlerror");
+        header("Location: ../pricing.php?error=sql");
         exit();
     } else {
         mysqli_stmt_bind_param($stmt, "s", $user);
@@ -56,7 +59,7 @@ if ($st == "COMPLETED" || $st == "APPROVED" || $st == "SAVED" || $st == "CREATED
         if ($row = mysqli_fetch_assoc($result)) {
             $amount = $row['certificatesAv'] + 100;
         } else {
-            header("Location: ../pricing.php?error=sqlerror");
+            header("Location: ../pricing.php?error=sql");
             exit();
         }
     }
@@ -64,7 +67,7 @@ if ($st == "COMPLETED" || $st == "APPROVED" || $st == "SAVED" || $st == "CREATED
     $sql = "UPDATE users SET certificatesAv= ? WHERE idUsers=" . $user . ";";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../pricing.php?error=sqlerror");
+        header("Location: ../pricing.php?error=sql");
         exit();
     } else {
 

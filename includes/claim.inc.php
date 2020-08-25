@@ -9,7 +9,7 @@ if (isset($_POST['claim-submit'])) {
 
   if (empty($token) || empty($claim)) {
 
-    header('Location: ../certificates.php?error=emptyfield&token=' . $token . '&claim=' . $claim);
+    header('Location: ../certificates.php?error=emptyfields&token=' . $token . '&claim=' . $claim);
     exit();
   } else {
 
@@ -41,11 +41,11 @@ if (isset($_POST['claim-submit'])) {
             exit();
           }
         } else {
-          header("Location: ../certificates.php?error=codeerror");
+          header("Location: ../certificates.php?error=code");
           exit();
         }
       } else {
-        header("Location: ../certificates.php?error=certnotfound");
+        header("Location: ../certificates.php?error=nocert");
         exit();
       }
     }

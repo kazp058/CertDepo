@@ -4,31 +4,11 @@ require "header.php";
 
 <main>
   <div class="wrapper-main">
+    <section class="message-container">
+      <?php require "messages.php"; ?>
+    </section>
     <section class="section-form">
       <div class="form-container">
-        <div class="messages">
-          <?php
-          if (isset($_GET["error"])) {
-            if ($_GET["error"] == "emptyfields") {
-              echo '<p class="error">Please fill all the fields!</p>';
-            } else if ($_GET["error"] == "sqlerror") {
-              echo '<p class="error">There was an error please retry later</p>';
-            } else if ($_GET["error"] == "wrongpwd") {
-              echo '<p class="error">Password and email does not match</p>';
-            } else if ($_GET["error"] == "nouser") {
-              echo '<p class="error">No account not found, please register if you are a new user</p>';
-            }
-          } else if (isset($_GET["login"])) {
-            if ($_GET["login"] == "success") {
-              echo '<p class="success">Welcome ' . $_SESSION["userUid"] . '! Ready to start?</p>';
-            }
-          } else if (isset($_GET["newpwd"])) {
-            if ($_GET["newpwd"] == "passwordupdated") {
-              echo '<p class="success">Your password has been reset!</p>';
-            }
-          }
-          ?>
-        </div>
         <div class="title-left">
           <h1>Login</h1>
         </div>
@@ -39,14 +19,14 @@ require "header.php";
         <?php
         if (isset($_SESSION["userId"])) {
         ?>
-        <div class="spacer"></div>
-        <div class="normal-form">
-          <form action="includes/logout.inc.php" method="post">
-          <div class="buttons">
-            <button type="submit" name="logout-submit">Logout</button>
+          <div class="spacer"></div>
+          <div class="normal-form">
+            <form action="includes/logout.inc.php" method="post">
+              <div class="buttons">
+                <button type="submit" name="logout-submit">Logout</button>
+              </div>
+            </form>
           </div>
-          </form>
-        </div>
         <?php
         } else {
         ?>

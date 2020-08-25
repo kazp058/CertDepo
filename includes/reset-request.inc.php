@@ -6,10 +6,10 @@ if (isset($_POST["reset-request-submit"])) {
   $userEmail = $_POST["email"];
 
   if (empty($userEmail)) {
-    header("Location: ../reset-password.php?error=noemail");
+    header("Location: ../reset-password.php?error=emptyfields");
     exit();
   } else if (!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ../reset-password.php?error=invalidemail");
+    header("Location: ../reset-password.php?error=invalidmail");
     exit();
   } else {
     $selector = bin2hex(random_bytes(8));
@@ -25,7 +25,7 @@ if (isset($_POST["reset-request-submit"])) {
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-      header("Location: ../reset-password.php?error=sqlerror");
+      header("Location: ../reset-password.php?error=sql");
       exit();
     } else {
       mysqli_stmt_bind_param($stmt, "s", $userEmail);
@@ -33,7 +33,7 @@ if (isset($_POST["reset-request-submit"])) {
       $result = mysqli_stmt_get_result($stmt);
       if ($row = mysqli_fetch_assoc($result)) {
       } else {
-        header("Location: ../reset-password.php?error=noaccount");
+        header("Location: ../reset-password.php?error=nouser");
         exit();
       }
     }
@@ -41,7 +41,7 @@ if (isset($_POST["reset-request-submit"])) {
     $sql = "DELETE FROM pwdReset WHERE pwdResetEmail =?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-      echo "There was an error!";
+      header("Location: ../reset-password.php?error=sql");
       exit();
     } else {
       mysqli_stmt_bind_param($stmt, "s", $userEmail);
@@ -51,7 +51,7 @@ if (isset($_POST["reset-request-submit"])) {
     $sql = "INSERT INTO pwdReset (pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES (?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-      echo "There was an error!";
+      header("Location: ../reset-password.php?error=sql");
       exit();
     } else {
       $hashedToken = password_hash($token, PASSWORD_DEFAULT);

@@ -4,6 +4,9 @@ require "header.php"
 
 <main>
   <div class="wrapper-main">
+    <section class="message-container">
+      <?php require "messages.php"; ?>
+    </section>
     <section class="section-default">
       <?php
       $selector = $_GET["selector"];

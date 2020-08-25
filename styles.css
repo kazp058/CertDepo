@@ -351,6 +351,47 @@ footer .centered {
 }
 
 
+/* Message container*/
+
+.message-container .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-container .message .error,
+.message-container .message .success {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 50%;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.message .error {
+    background: #810000;
+}
+
+.message .success {
+    background: rgb(28, 102, 28);
+}
+
+.message h3 {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #dfdfdf;
+    margin-bottom: 5px;
+}
+
+.message p {
+    font-size: 20px;
+    color: #e6ecf5;
+    font-weight: normal;
+}
+
+
 /* Normal Form */
 
 .section-form .form-container {

@@ -4,6 +4,9 @@ require 'header.php';
 
 <main>
   <div class="wrapper-main">
+    <section class="message-container">
+      <?php require "messages.php"; ?>
+    </section>
     <div class="section-default">
       <section class="section-search">
         <div class="search-form">
@@ -74,7 +77,7 @@ require 'header.php';
                                                     $stmt = mysqli_stmt_init($conn);
 
                                                     if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                                      header("Location: ../certificates.php?error=sqlerror");
+                                                      header("Location: ../certificates.php?error=sql");
                                                       exit();
                                                     } else {
                                                       mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
@@ -98,7 +101,6 @@ require 'header.php';
             $stmt = mysqli_stmt_init($conn_certs);
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-              
             } else {
               mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
               mysqli_stmt_execute($stmt);

@@ -8,10 +8,10 @@ if (isset($_POST["reset-password-submit"])) {
   $passwordRepeat = $_POST["pwd-repeat"];
 
   if (empty($password) || empty($passwordRepeat)) {
-    header("Location: ../create-new-password.php?selector=" . $selector . "&validator=" . $validator . "&error=emptyfield");
+    header("Location: ../create-new-password.php?selector=" . $selector . "&validator=" . $validator . "&error=emptyfields");
     exit();
   } elseif ($password != $passwordRepeat) {
-    header("Location: ../create-new-password.php?selector=" . $selector . "&validator=" . $validator . "&error=pwdnotsame");
+    header("Location: ../create-new-password.php?selector=" . $selector . "&validator=" . $validator . "&error=passwordcheck");
     exit();
   }
   $currentDate = date("U");
@@ -27,7 +27,7 @@ if (isset($_POST["reset-password-submit"])) {
     mysqli_stmt_bind_param($stmt, "ss", $selector, $currentDate);
     mysqli_stmt_execute($stmt);
 
-    $result = mysqli_stmt_get_results($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     if (!$row = mysqli_fetch_assoc($result)) {
       echo "There was an error!";
       exit();

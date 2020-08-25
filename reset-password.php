@@ -3,8 +3,11 @@ require "header.php";
 ?>
 <main>
   <div class="wrapper-main">
+    <section class="message-container">
+      <?php require "messages.php"; ?>
+    </section>
     <section class="section-form">
-            <div class='messages'>
+      <div class='messages'>
         <?php
         if (isset($_GET["reset"])) {
           if ($_GET["reset"] == "success") {
@@ -23,26 +26,26 @@ require "header.php";
       </div>
       <div class="form-container">
 
-      <div class="title-left">
-      <h1>Reset your password</h1>
-      <p>An e-mail will be send to you with instructions on how to reset your password.</p>
+        <div class="title-left">
+          <h1>Reset your password</h1>
+          <p>An e-mail will be send to you with instructions on how to reset your password.</p>
 
-      </div>
+        </div>
 
-      <div class="normal-form">
-        <form action="includes/reset-request.inc.php" method="post">
-          <div class="field">
-            <p>Email Address</p>
-            <div class="input-field">
-              <i class="material-icons md-36">email</i>
-              <input type="text" name="email">
+        <div class="normal-form">
+          <form action="includes/reset-request.inc.php" method="post">
+            <div class="field">
+              <p>Email Address</p>
+              <div class="input-field">
+                <i class="material-icons md-36">email</i>
+                <input type="text" name="email">
+              </div>
             </div>
-          </div>
-          <div class="buttons">
-            <button class="highlight-button" type="submit" name="reset-request-submit">Recover account</button>
-          </div>
-        </form>
-      </div>
+            <div class="buttons">
+              <button class="highlight-button" type="submit" name="reset-request-submit">Recover account</button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </div>

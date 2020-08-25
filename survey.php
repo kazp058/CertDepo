@@ -3,6 +3,9 @@ require "header.php";
 ?>
 <main>
    <div class="wrapper-main">
+      <section class="message-container">
+         <?php require "messages.php"; ?>
+      </section>
       <section class="section-form">
          <div class="form-container">
             <?php
@@ -24,7 +27,7 @@ require "header.php";
                   $name = $row['issuerName'];
                   $supportmail = $row['emailCert'];
                } else {
-                  header("Location: survey.php?id=" . $id . "&error=nocertificate");
+                  header("Location: survey.php?id=" . $id . "&error=nocert");
                   exit();
                }
             }

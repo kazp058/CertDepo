@@ -2,6 +2,9 @@
 require 'header.php';
 ?>
 <main>
+    <section class="message-container">
+        <?php require "messages.php"; ?>
+    </section>
     <section class="section-default">
         <div>
             <?php
@@ -9,7 +12,7 @@ require 'header.php';
             $sql = "SELECT * FROM certs WHERE idCerts=?;";
             $stmt = mysqli_stmt_init($conn_certs);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                header("Location: certificates.php?id=" . $_GET['id'] . "error=sqlerror");
+                header("Location: certificates.php?id=" . $_GET['id'] . "error=sql");
                 exit();
             } else {
                 mysqli_stmt_bind_param($stmt, "s", $_GET['id']);
@@ -20,7 +23,7 @@ require 'header.php';
                     $sql = "SELECT * FROM certscompany WHERE certId=?;";
                     $stmt = mysqli_stmt_init($conn_certs);
                     if (!mysqli_stmt_prepare($stmt, $sql)) {
-                        header("Location: certificates.php?id=" . $_GET['id'] . "error=sqlerror");
+                        header("Location: certificates.php?id=" . $_GET['id'] . "error=sql");
                         exit();
                     } else {
                         mysqli_stmt_bind_param($stmt, "i", $row['issuerCerts']);
@@ -34,19 +37,19 @@ require 'header.php';
                                 <h2><?php echo $row['titleCerts']; ?></h2>
                                 <div>
                                     <p>Reciever: <?php echo $row['userName']; ?></p>
-                                    <p>Certificate granted by: <?php echo $rowissuer['issuerName'];?></p>
-                                    <p>Validation token: <?php echo $row['tokenCerts'];?></p>
+                                    <p>Certificate granted by: <?php echo $rowissuer['issuerName']; ?></p>
+                                    <p>Validation token: <?php echo $row['tokenCerts']; ?></p>
                                     <?php
-                                        if($row['isClaimed'] == 0){
-                                            ?>
-                                            <form action="includes/claim.inc.php" method="post">
-                                                <input type="hidden" name="token" value= "<?php echo $row['tokenCerts'];?>">
-                                                <input type="number" name="ccode" min=100000 max=999999>
-                                                <input type="hidden" name="userId" value= "<?php echo $_SESSION['userId'];?>">
-                                                <button type="submit" name="claim-submit">Claim</button>
-                                            </form>
-                                            <?php
-                                        }
+                                    if ($row['isClaimed'] == 0) {
+                                    ?>
+                                        <form action="includes/claim.inc.php" method="post">
+                                            <input type="hidden" name="token" value="<?php echo $row['tokenCerts']; ?>">
+                                            <input type="number" name="ccode" min=100000 max=999999>
+                                            <input type="hidden" name="userId" value="<?php echo $_SESSION['userId']; ?>">
+                                            <button type="submit" name="claim-submit">Claim</button>
+                                        </form>
+                                    <?php
+                                    }
                                     ?>
                                 </div>
                             </div>

@@ -4,37 +4,12 @@ require "header.php";
 
 <main>
   <div class="wrapper-main">
+    <section class="message-container">
+      <?php require "messages.php"; ?>
+    </section>
     <section class="section-form">
 
       <div class="form-container">
-
-        <div class="messages">
-          <?php
-          if (isset($_GET['error'])) {
-            if ($_GET['error'] == "emptyfields") {
-              echo '<p class="error">Fill in all fields!</p>';
-            }
-            if ($_GET['error'] == "invalidmailuid") {
-              echo '<p class="error">Mail and username not valid!</p>';
-            } else if ($_GET['error'] == "invalidmail") {
-              echo '<p class="error">Invalid mail! Make sure to be using a valid email: example@address.com </p>';
-            } else if ($_GET['error'] == "invaliduid") {
-              echo '<p class="error">Invalid username, please use only letters and numbers</p>';
-            } else if ($_GET['error'] == "passwordcheck") {
-              echo '<p class="error">Make sure to use the same password in both password and password repeat</p>';
-            } else if ($_GET['error'] == "sqlerror") {
-              echo '<p class="error">There was an error please retry later</p>';
-            } else if ($_GET['error'] == "usertaken") {
-              echo '<p class="error">That username has been taken, please try other options</p>';
-            }
-          } else if (isset($_GET['signup'])) {
-            if ($_GET['signup'] == "success") {
-              echo '<p class="success">Your account has been created successfully</p>';
-            }
-          }
-          ?>
-        </div>
-
         <div class="title-left">
           <h1>Signup</h1>
         </div>
@@ -75,7 +50,7 @@ require "header.php";
               <div class="check-field">
                 <label class="container">
                   <input type="checkbox" name="accept" value="accept">
-                  <span class="checkmark"></span> 
+                  <span class="checkmark"></span>
                 </label>
                 <p>I accept the <a>Terms Of Service</a> and the <a>Privacy Policy</a>.</p>
               </div>

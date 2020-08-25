@@ -19,7 +19,7 @@ if (isset($_POST['certificate-submit'])) {
    $sql = "INSERT INTO certscompany (titleCerts, dateCert ,certsCreated, certsAssigned, issuerCerts, issuerName, emailCert , gatherType) VALUES (?,?,0,?,?,?,?,?);";
    $stmt = mysqli_stmt_init($conn_certs);
    if (!mysqli_stmt_prepare($stmt, $sql)) {
-      header("Location: ../create-certificate.php?error=sqlerror");
+      header("Location: ../create-certificate.php?error=sql");
       exit();
    } else {
       mysqli_stmt_bind_param($stmt, "sssisss", $title, $date, $assigned, $userId, $issuername, $issuermail, $type);
@@ -29,7 +29,7 @@ if (isset($_POST['certificate-submit'])) {
       $sql = "SELECT * FROM users WHERE idUsers=?;";
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
-         header("Location: ../create-certificate.php?error=sqlerror");
+         header("Location: ../create-certificate.php?error=sql");
          exit();
       } else {
          mysqli_stmt_bind_param($stmt, "s", $userId);
@@ -38,7 +38,7 @@ if (isset($_POST['certificate-submit'])) {
          if ($row = mysqli_fetch_assoc($result)) {
             $amount = $row['certificatesAv'] - $assigned;
          } else {
-            header("Location: ../create-certificate.php?error=sqlerror");
+            header("Location: ../create-certificate.php?error=sql");
             exit();
          }
       }

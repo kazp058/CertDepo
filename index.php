@@ -4,6 +4,9 @@ require "header.php";
 
 <main>
    <div class="wrapper-main">
+      <section class="message-container">
+         <?php require "messages.php"; ?>
+      </section>
       <section class="section-index">
          <?php
          if (isset($_SESSION["userId"])) {
@@ -17,7 +20,8 @@ require "header.php";
          ?>
             <div class="info">
                <h3>Enjoy more features by creating an account</h3>
-               <p>Yes, you will receive the certificates either way, but if you want to keep easy track of them and been able to claim them so that they are linked to your account, and all of this is free!</p><p> So make an <a href="signup.php">account now</a> or <a href="login.php">log in</a> to enjoy all features. If you want to make a company account <a href="support.php">click here</a>.</p>
+               <p>Yes, you will receive the certificates either way, but if you want to keep easy track of them and been able to claim them so that they are linked to your account, and all of this is free!</p>
+               <p> So make an <a href="signup.php">account now</a> or <a href="login.php">log in</a> to enjoy all features. If you want to make a company account <a href="support.php">click here</a>.</p>
             </div>
          <?php
          }
@@ -60,7 +64,8 @@ require "header.php";
                   <h3>Constant Imporvements</h3>
                   <p>We just started and we are keeping this platform, expect important improvements and upgrades to our services, if you have recommendations we are glad to <a href="#">read them</a>.</p>
                </div>
-            </div>            <div class="grid-e">
+            </div>
+            <div class="grid-e">
                <div class="icon"><i class="material-icons md-48">share</i></div>
                <div class="content">
                   <h3>Easy Sharing</h3>

@@ -4,6 +4,9 @@ require 'header.php';
 <script src="https://www.paypal.com/sdk/js?client-id=ASWTD2lnV8eW6xqTvZU6P2Pro2EbWLSKWiGKe52_FkaYi_-nGpjSyZvqJv4cRFCCAV74GN8jyn5kpKLe&currency=USD" data-sdk-integration-source="button-factory"></script>
 </script>
 <main>
+    <section class="message-container">
+        <?php require "messages.php"; ?>
+    </section>
     <section class="payment-container">
         <div class="info">
             <h3>Pricing</h3>

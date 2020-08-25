@@ -13,7 +13,7 @@ if (isset($_POST['login-submit'])) {
       $sql = "SELECT * FROM users WHERE emailUsers=?;";
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
-         header("Location: ../login.php?error=sqlerror");
+         header("Location: ../login.php?error=sql");
          exit();
       } else {
          mysqli_stmt_bind_param($stmt, "s", $mail);
@@ -31,7 +31,7 @@ if (isset($_POST['login-submit'])) {
                $_SESSION['userMail'] = $row['emailUsers'];
                $_SESSION['isCompany'] = $row['isCompany'];
 
-               header("Location: ../login.php?login=success&isCompany=" . $_SESSION['isCompany']);
+               header("Location: ../login.php?success=login&isCompany=" . $_SESSION['isCompany']);
                exit();
             } else {
                header("Location: ../login.php?error=wrongpwd");

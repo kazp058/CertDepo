@@ -3,6 +3,9 @@ require 'header.php';
 ?>
 <main>
    <div class="wrapper-main">
+      <section class="message-container">
+         <?php require "messages.php"; ?>
+      </section>
       <section class="section-default">
 
          <script>
@@ -47,15 +50,15 @@ require 'header.php';
                   document.getElementById("username").value = "<?php echo $_SESSION['userUid'] ?>";
                   document.getElementById("email").value = "<?php echo $_SESSION['userMail'] ?>";
 
-                  document.getElementById("username").readOnly=true;
-                  document.getElementById("email").readOnly=true;
+                  document.getElementById("username").readOnly = true;
+                  document.getElementById("email").readOnly = true;
 
                } else {
                   document.getElementById("username").value = " ";
                   document.getElementById("email").value = " ";
 
-                  document.getElementById("username").readOnly=false;
-                  document.getElementById("email").readOnly=false;
+                  document.getElementById("username").readOnly = false;
+                  document.getElementById("email").readOnly = false;
 
                }
             }
@@ -137,7 +140,7 @@ require 'header.php';
                   $stmt = mysqli_stmt_init($conn);
 
                   if (!mysqli_stmt_prepare($stmt, $sql)) {
-                     header("Location: ../certificates.php?error=sqlerror");
+                     header("Location: ../certificates.php?error=sql");
                      exit();
                   } else {
                      mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
