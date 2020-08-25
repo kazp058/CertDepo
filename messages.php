@@ -52,6 +52,8 @@
          echo '<p>You have successfully buyed more certificates!</p>';
       }else if ($msg == "login") {
          echo '<p>Welcome back! :D</p>';
+      }else if ($msg == "signup") {
+         echo '<p>Your account has been created! Welcome :D</p>';
       }
       echo '</div>';
    }
