@@ -124,6 +124,67 @@ header .logo strong {
 }
 
 
+/* Certview */
+
+.certview {
+    display: flex;
+    background: #dfdfdf;
+    padding: 25px 30px;
+}
+
+.certimage img {
+    width: 1000;
+    height: auto;
+}
+
+.certinfo h2 {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+
+.certinfo div p {
+    margin: 20px 5px;
+    font-size: 30px;
+}
+
+.certinfo form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certinfo .field {
+    display: flex;
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+
+.certinfo .field .input-field input {
+    width: 200px;
+    border-radius: 30px;
+    background: #1d1d1d;
+    color: #e6ecf5;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.certinfo .button button {
+    background: #1d1d1d;
+    color: #e6ecf5;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
 /* Icons */
 
 .material-icons.md-18 {
