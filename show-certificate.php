@@ -32,6 +32,7 @@ require 'header.php';
                         if ($rowissuer = mysqli_fetch_assoc($result)) {
 
                             $result = exec('sudo /usr/bin/python3 /var/www/certdepo/includes/scripts/generateCert.py -f 001.png -n ' . $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c ' . $row['idCerts'] . ' 2>&1');
+                            echo $result;
             ?>
                             <div>
                                 <h2><?php echo $row['titleCerts']; ?></h2>
