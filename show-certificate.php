@@ -31,7 +31,7 @@ require 'header.php';
                         $result = mysqli_stmt_get_result($stmt);
                         if ($rowissuer = mysqli_fetch_assoc($result)) {
 
-                            $result = exec('sudo /usr/bin/python3 /var/www/certdepo/includes/scripts/generateCert.py -f 001.png -n ' . $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c ' . $row['idCerts'] . ' 2>&1');
+                            $result = exec('/usr/bin/python3 /var/www/certdepo/includes/scripts/generateCert.py -f 001.png -n ' . $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c ' . $row['idCerts'] . ' 2>&1');
             ?>
                             <div class="certinfo">
                                 <h2><?php echo $row['titleCerts']; ?></h2>
