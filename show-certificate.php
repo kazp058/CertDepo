@@ -30,7 +30,7 @@ require 'header.php';
                         mysqli_stmt_execute($stmt);
                         $result = mysqli_stmt_get_result($stmt);
                         if ($rowissuer = mysqli_fetch_assoc($result)) {
-
+                            // generateCert.py -f 001.png -n Kevin Anthony Zhang Plaza -t Test certificate -k 000002222222 -i Google Inc. -c 2
                             $result = exec('/usr/bin/python3 /var/www/certdepo/includes/scripts/generateCert.py -f 001.png -n ' . $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c ' . $row['idCerts'] . ' 2>&1');
             ?>
                             <div class="certinfo">
