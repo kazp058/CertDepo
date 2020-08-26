@@ -6,6 +6,11 @@ Website design for hosting a certficicates management system, this site helps ke
 
 The server is running with a LAMP server.
 
+Run this command 
+```shell
+sudo chmod -R 777 certdepo
+```
+
 ## Instructions for use
 
 1. Create inside **includes** folder a file named **credentials.php**, make sure to put in here these following variables:
