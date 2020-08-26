@@ -25,7 +25,7 @@ function sendmail($email,$subject,$body){
     //$mail->Port = 465;
     //$mail->SMTPSecure = "ssl";
     $mail->isHTML(true);
-    $mail->setFrom('robotronduran@gmail.com');
+    $mail->setFrom('certdepo@gmail.com');
     $mail->addAddress($email);
     $mail->Subject = $subject;
     $mail->Body = $body;

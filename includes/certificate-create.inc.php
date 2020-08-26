@@ -85,7 +85,7 @@ if (isset($_POST['survey-submit'])) {
                mysqli_stmt_execute($stmt);
                $result = mysqli_stmt_get_result($stmt);
 
-               $url = '192.168.100.100/certificates.php?token=' . $token;
+               $url = 'http://www.certdepo.com/certificates.php?token=' . $token;
 
                $to = $mail;
                $subject = 'Congratulations for you ' . $row['titleCerts'] . ' certificate';
