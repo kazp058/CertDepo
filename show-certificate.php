@@ -61,7 +61,7 @@ require 'header.php';
                                 </div>
                             </div>
                             <div class="certimage">
-                                <img src="includes/scripts/certificates/temp/Cert8.png">
+                                <img src="includes/scripts/certificates/temp/Cert<?php echo $_GET['id'];?>.png">
                             </div>
             <?php
                         } else {
