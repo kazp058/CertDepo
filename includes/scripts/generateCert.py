@@ -28,7 +28,7 @@ if imagename == '001.png':
                    error_correction=qrcode.constants.ERROR_CORRECT_L,
                    box_size=10,
                    border=4,)
-    qr.add_data('192.168.100.100/show-certificate.php?id='+idcert)
+    qr.add_data('www.certdepo.com/show-certificate.php?id='+idcert)
     qr.make(fit=True)
     qrimg = qr.make_image(fill_color="black", back_color="#f2f2f2")
 

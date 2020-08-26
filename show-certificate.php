@@ -6,7 +6,7 @@ require 'header.php';
         <?php require "messages.php"; ?>
     </section>
     <section class="section-default">
-        <div>
+        <div class="certview">
             <?php
             require 'includes/dbh.inc.php';
             $sql = "SELECT * FROM certs WHERE idCerts=?;";
@@ -32,30 +32,36 @@ require 'header.php';
                         if ($rowissuer = mysqli_fetch_assoc($result)) {
 
                             $result = exec('/usr/bin/python3 /var/www/certdepo/includes/scripts/generateCert.py -f 001.png -n ' . $row['userName'] . ' -t ' . $row['titleCerts'] . ' -k ' . $row['tokenCerts'] . ' -i ' . $rowissuer['issuerName'] . ' -c ' . $row['idCerts'] . ' 2>&1');
-                            echo $result;
             ?>
-                            <div>
+                            <div class="certinfo">
                                 <h2><?php echo $row['titleCerts']; ?></h2>
                                 <div>
-                                    <p>Reciever: <?php echo $row['userName']; ?></p>
-                                    <p>Certificate granted by: <?php echo $rowissuer['issuerName']; ?></p>
-                                    <p>Validation token: <?php echo $row['tokenCerts']; ?></p>
+                                    <p><strong>Reciever:</strong> <?php echo $row['userName']; ?></p>
+                                    <p><strong>Certificate granted by: </strong><?php echo $rowissuer['issuerName']; ?></p>
+                                    <p><strong>Validation token: </strong><?php echo $row['tokenCerts']; ?></p>
                                     <?php
-                                    if ($row['isClaimed'] == 0) {
+                                    if ($row['isClaimed'] == 0) { //<?php echo $_GET['id']; s
                                     ?>
                                         <form action="includes/claim.inc.php" method="post">
                                             <input type="hidden" name="token" value="<?php echo $row['tokenCerts']; ?>">
-                                            <input type="number" name="ccode" min=100000 max=999999>
+                                            <div class="field">
+                                                <p>Claim code</p>
+                                                <div class="input-field">
+                                                    <input type="text" name="ccode" maxlength="6">
+                                                </div>
+                                            </div>
                                             <input type="hidden" name="userId" value="<?php echo $_SESSION['userId']; ?>">
-                                            <button type="submit" name="claim-submit">Claim</button>
+                                            <div class="button">
+                                                <button type="submit" name="claim-submit">Claim</button>
+                                            </div>
                                         </form>
                                     <?php
                                     }
                                     ?>
                                 </div>
                             </div>
-                            <div>
-                                <img src="includes/scripts/certificates/temp/Cert<?php echo $_GET['id']; ?>.png">
+                            <div class="certimage">
+                                <img src="includes/scripts/certificates/temp/Cert8.png">
                             </div>
             <?php
                         } else {
