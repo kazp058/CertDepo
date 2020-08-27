@@ -80,7 +80,7 @@ require 'header.php';
                 purchase_units: [{
                     amount: {
                         currency_code: "USD",
-                        value: String(cost)
+                        value: '0.50' //String(cost)
                     }
                 }]
             });
