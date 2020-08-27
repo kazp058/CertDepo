@@ -23,10 +23,6 @@ main {
 
 /*General*/
 
-p {
-    font-size: 25px;
-}
-
 p a {
     color: #810000;
     text-decoration: none;

@@ -70,27 +70,7 @@ require 'header.php';
             }
           } else if (isset($_SESSION['userId']) && $_SESSION['isCompany']) {
         ?>
-        <h1>Certificados Emitidos (Disponibles: <?php
-                                                    require 'includes/dbh.inc.php';
-
-                                                    $sql = "SELECT * FROM users WHERE idUsers=?;";
-                                                    $stmt = mysqli_stmt_init($conn);
-
-                                                    if (!mysqli_stmt_prepare($stmt, $sql)) {
-                                                      header("Location: ../certificates.php?error=sql");
-                                                      exit();
-                                                    } else {
-                                                      mysqli_stmt_bind_param($stmt, "s", $_SESSION['userId']);
-                                                      mysqli_stmt_execute($stmt);
-                                                      $result = mysqli_stmt_get_result($stmt);
-                                                      if ($userrow = mysqli_fetch_assoc($result)) {
-                                                        echo $userrow['certificatesAv'];
-                                                      } else {
-                                                        header("Location: ../login.php?error=nouser");
-                                                        exit();
-                                                      }
-                                                    }
-                                                    ?>)</h1>
+        <h1>Certificados Emitidos</h1>
         <hr>
 
         <div class="grid-vertical">
@@ -120,14 +100,6 @@ require 'header.php';
                     <h4>Certificados: </h4>
                     <p><?php echo $row['certsCreated'] . " | " . $row['certsAssigned']; ?></p>
                   </div>
-                  <div class="info-inline">
-                    <h4>Agregar más espacio </h4>
-                    <form action="includes/add-space.inc.php" method="post">
-                      <input type="hidden" name="id" value=<?php echo $row['certId']; ?>>
-                      <input type="number" name="addup" min="1" max="<?php echo $userrow['certificatesAv']; ?>">
-                      <button type="submit" name="addup-submit"><i class="material-icons md-12">add</i></button>
-                    </form>
-                  </div>
                 </div>
               </div>
 
@@ -141,9 +113,6 @@ require 'header.php';
         <div class="info-inline">
           <div>
             <h3><a href="create-certificate.php">Crear certificado</a></h3>
-          </div>
-          <div>
-            <h3><a href="pricing.php">Comprar certificados</a></h3>
           </div>
         </div>
       <?php
