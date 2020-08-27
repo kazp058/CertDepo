@@ -26,7 +26,6 @@ session_start();
             <ul class="nav-links">
                <li><a href="index.php">Home</a></li>
                <li><a href="certificates.php">Certificados</a></li>
-               <li><a href="pricing.php">Precios</a></li>
                <li><a href="support.php">Ayuda</a></li>
                <li class="nav-links-mobile">
                   <?php

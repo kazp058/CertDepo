@@ -55,7 +55,7 @@ require "header.php";
                <div class="icon"><i class="material-icons md-48">enhanced_encryption</i></div>
                <div class="content">
                   <h3>Encriptacion</h3>
-                  <p>¿Preocupado por tu información? Nosotros encriptamos tus datos personales y los mantenemos seguro en nuestros servidores bien protegidos. Tampoco vendemos tu información, ya que nosotros recaudamos ingresos mediante la venta de certificados. Puedes leer más sobre nuestras <a href="#">políticas de privacidad</a>.</p>
+                  <p>¿Preocupado por tu información? Nosotros encriptamos tus datos personales y los mantenemos seguro en nuestros servidores bien protegidos. Tampoco vendemos tu información, ya que nosotros recaudamos ingresos mediante anuncios, permitiendo que nuestra plataforma sea gratuita. Puedes leer más sobre nuestras <a href="#">políticas de privacidad</a>.</p>
                </div>
             </div>
             <div class="grid-e">

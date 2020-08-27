@@ -10,11 +10,11 @@ require 'header.php';
     <section class="payment-container">
         <div class="info">
             <h3>Precios</h3>
-            <p>Usa el deslizador para seleccionar la cantidad de certificados que cubran tus necesidades.</p>
+            <p>Usa el deslizador para seleccionar la añadir los certificados que cubran tus necesidades.</p>
             <p>Estos <strong>certificados</strong> son de <strong>un solo pago</strong> y <strong>no tienen caducidad</strong>. Puedes comprar certificados ahora y usarlos como te convengan.</p>
             <br>
             <h3>Métodos de pago</h3>
-            <p>Nosotros manejamos los datos mediante la plataforma de paypal, gracias a esto podemos asegurarte que toda tu informacion bancaria se encuentra protegida y segura.</p>
+            <p></p>
             <br>
             <div class="image">
                 <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png" alt="Pay with PayPal, PayPal Credit or any major credit card" />
