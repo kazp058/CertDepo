@@ -18,9 +18,9 @@ require 'header.php';
                <form action="includes/change-status.php" method="post">
                   <input type="hidden" value="<?php echo $_SESSION['userId']; ?>" name="id">
                   <button type="submit" name="change-submit">
-                     <i class="material-icons md-18">verified</i> Company Status
+                     <i class="material-icons md-18">verified</i> Estado de Empresa
                   </button>
-                  <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
+                  <p>Cuando solicites el estado de compañía seras capaz de emitir certificados.</p>
                </form>
             </div>
          <?php
@@ -29,53 +29,53 @@ require 'header.php';
             <div class="company-form">
                <form action="login.php" method="post">
                   <button type="submit" name="change-submit">
-                     <i class="material-icons md-18">verified</i> Company Status
+                     <i class="material-icons md-18">verified</i> Estado de Empresa
                   </button>
-                  <p>When you request the company status you will not be able to recept certificates, and you will only be able to emit.</p>
-                  <p>Log in to request your company status.</p>
+                  <p>Cuando solicites el estado de compañía seras capaz de emitir certificados.</p>
+                  <p>Ingresa a tu cuenta para solicitar el estado de compañía.</p>
                </form>
             </div>
          <?php
          }
          ?>
          <div>
-            <h2>FAQ</h2>
+            <h2>Preguntas Frecuentes</h2>
             <hr>
             <div class="grid-vertical">
                <div class="grid-e">
                   <div class="content">
-                     <h3>How do we verify the issuers data?</h3>
-                     <p>Everyone can issue certificates, just press the button and start your experience, remember that once you get the company status you will not be able to see or claim certficates.</p>
+                     <h3>¿Cómo verificamos los datos de los emisores?</h3>
+                     <p>Nosotros no solicitamos documentacion legal a los emisores de certificados debido a nuestras políticas de privacidad y no nos hacemos responsables del uso que se haga con la plataforma.</p>
                   </div>
                </div>
                <div class="grid-e">
                   <div class="content">
-                     <h3>How to pay for the emission of certificates?</h3>
-                     <p>We accept all debit cards and payment options in <strong>PayPal</strong>, so that the payment process is smooth as possible.</p>
+                     <h3>¿Qué métodos de pago aceptan?</h3>
+                     <p>Nosotros manejamos los pagos a través de <strong>PayPal</strong>, de esta forma hacemos el proceso de pago simple y eficiente.</p>
                   </div>
                </div>
                <div class="grid-e">
                   <div class="content">
-                     <h3>How to become a company?</h3>
-                     <p>Click in the option "request company status" and a member of the support team will contact you.</p>
+                     <h3>¿Cómo puedo obtener el estado de empresa?</h3>
+                     <p>Puedes hacer click en la opción <strong>Estado de Empresa</strong> y listo, puedes emitir certificados.</p>
                   </div>
                </div>
                <div class="grid-e">
                   <div class="content">
-                     <h3>Who can see my data?</h3>
-                     <p>No one can see your data, we have a strong encryption and data protection, obviously the certificates that you share are for easy access. But we dont keep track of payment information nierther contact information.</p>
+                     <h3>¿Quién puede ver mi información?</h3>
+                     <p>Nosotros no solicitamos información legal sobre ti, tampoco compartimos tu información. Obviamente los certificados pueden ser compartidos y si envias el link o el código qr y estos pueden ser vistos por cualquiera.</p>
                   </div>
                </div>
                <div class="grid-e">
                   <div class="content">
-                     <h3>I can see the payment made in my account status but the page shows me an error</h3>
-                     <p>We have integrated Paypal's API and we verify transcations in every request, but we will be glad to help you please go to <a>Contact Us</a> and specify your situation.</p>
+                     <h3>Puedo ver el pago realizado en mi estado de cuenta pero no veo que los certificados se hallan actualizado</h3>
+                     <p>Si ocurre un error entonces contáctanos al correo <strong>certdepo@gmail.com</strong> y especifica tu situación.</p>
                   </div>
                </div>
                <div class="grid-e">
                   <div class="content">
-                     <h3>I want to change my information</h3>
-                     <p>We currently dont have that feature but soon we will.</p>
+                     <h3>Quiero cambiar mi información</h3>
+                     <p>Por el momento no contamos con esas opciones, pero pronto implementaremos esas funciones.</p>
                   </div>
                </div>
             </div>

@@ -36,23 +36,23 @@ require 'header.php';
                             <div class="certinfo">
                                 <h2><?php echo $row['titleCerts']; ?></h2>
                                 <div>
-                                    <p><strong>Reciever:</strong> <?php echo $row['userName']; ?></p>
-                                    <p><strong>Certificate granted by: </strong><?php echo $rowissuer['issuerName']; ?></p>
-                                    <p><strong>Validation token: </strong><?php echo $row['tokenCerts']; ?></p>
+                                    <p><strong>Receptor:</strong> <?php echo $row['userName']; ?></p>
+                                    <p><strong>Certificado emitido por: </strong><?php echo $rowissuer['issuerName']; ?></p>
+                                    <p><strong>Token de validación: </strong><?php echo $row['tokenCerts']; ?></p>
                                     <?php
                                     if ($row['isClaimed'] == 0) { //<?php echo $_GET['id']; s
                                     ?>
                                         <form action="includes/claim.inc.php" method="post">
                                             <input type="hidden" name="token" value="<?php echo $row['tokenCerts']; ?>">
                                             <div class="field">
-                                                <p>Claim code</p>
+                                                <p>Código</p>
                                                 <div class="input-field">
                                                     <input type="text" name="ccode" maxlength="6">
                                                 </div>
                                             </div>
                                             <input type="hidden" name="userId" value="<?php echo $_SESSION['userId']; ?>">
                                             <div class="button">
-                                                <button type="submit" name="claim-submit">Claim</button>
+                                                <button type="submit" name="claim-submit">Reclamar</button>
                                             </div>
                                         </form>
                                     <?php

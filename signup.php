@@ -19,28 +19,28 @@ require "header.php";
         <div class="normal-form">
           <form class="form-signup" action="includes/signup.inc.php" method="post">
             <div class="field">
-              <p>Legal Name or Company Name</p>
+              <p>Nombre legal o nombre de la compañía</p>
               <div class="input-field">
                 <i class="material-icons md-36">account_circle</i>
                 <input type="text" name="uid">
               </div>
             </div>
             <div class="field">
-              <p>Email Address</p>
+              <p>Correo electrónico</p>
               <div class="input-field">
                 <i class="material-icons md-36">email</i>
                 <input type="text" name="mail">
               </div>
             </div>
             <div class="field">
-              <p>Password</p>
+              <p>Contraseña</p>
               <div class="input-field">
                 <i class="material-icons md-36">vpn_key</i>
                 <input type="password" name="pwd">
               </div>
             </div>
             <div class="field">
-              <p>Repeat your password</p>
+              <p>Repita su contraseña</p>
               <div class="input-field">
                 <i class="material-icons md-36">vpn_key</i>
                 <input type="password" name="pwd-repeat">
@@ -52,11 +52,11 @@ require "header.php";
                   <input type="checkbox" name="accept" value="accept">
                   <span class="checkmark"></span>
                 </label>
-                <p>I accept the <a>Terms Of Service</a> and the <a>Privacy Policy</a>.</p>
+                <p>Yo acepto los <a>Términos  de Servicio</a> y las <a>Políticas de Privacidad</a>.</p>
               </div>
             </div>
             <div class="buttons">
-              <button type="submit" name="signup-submit">Sign Up</button>
+              <button type="submit" name="signup-submit">Registrar</button>
             </div>
           </form>
         </div>

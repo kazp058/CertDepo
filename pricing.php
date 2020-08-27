@@ -9,12 +9,12 @@ require 'header.php';
     </section>
     <section class="payment-container">
         <div class="info">
-            <h3>Pricing</h3>
-            <p>Use the quantity sliders to customize the certificates that you buy according to your needs.</p>
-            <p>These <strong>certificates</strong> are <strong>one-time</strong> payments and they <strong>will not expire</strong>. You can buy a amount of certificates and use them as you like, this means that you can assign them later if you want or save them for later.</p>
+            <h3>Precios</h3>
+            <p>Usa el deslizador para seleccionar la cantidad de certificados que cubran tus necesidades.</p>
+            <p>Estos <strong>certificados</strong> son de <strong>un solo pago</strong> y <strong>no tienen caducidad</strong>. Puedes comprar certificados ahora y usarlos como te convengan.</p>
             <br>
-            <h3>Payment Methods</h3>
-            <p>We manage our payments throught Paypal, so its extra secure for you. We count with a verification API to confirm your purchases and make the experience as smooth as posible.</p>
+            <h3>Métodos de pago</h3>
+            <p>Nosotros manejamos los datos mediante la plataforma de paypal, gracias a esto podemos asegurarte que toda tu informacion bancaria se encuentra protegida y segura.</p>
             <br>
             <div class="image">
                 <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png" alt="Pay with PayPal, PayPal Credit or any major credit card" />
@@ -23,13 +23,13 @@ require 'header.php';
 
 
         <div class="payment-form">
-            <h3>Package</h3>
+            <h3>Paquete de certificados</h3>
             <div class="field">
                 <div class="info-field">
-                    <p><span id="certsnum"></span><strong>   Certificates</strong></p>
+                    <p><span id="certsnum"></span><strong>   Certificados</strong></p>
                 </div>
                 <div class="info-field">
-                    <p>Total in USD$<span id="price"></span> </p>
+                    <p>Total en USD$<span id="price"></span> </p>
                 </div>
                 <div class="payment-field">
                     <input type="range" min="100" max="500" value="120" class="slider" id="certs">
@@ -43,7 +43,7 @@ require 'header.php';
             }else{
             ?>
             <div class="info-field">
-                    <p><strong>Login into a company account to start buying Certificates</strong></p>
+                    <p><strong>Ingresa a tu cuenta con estado de compañía para comprar certificados</strong></p>
                 </div>
             <?php
             }

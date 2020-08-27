@@ -3,29 +3,29 @@
     <div class="column-2">
         <div class="column-4">
             <div class="column">
-                <h3>Company</h3>
+                <h3>Compañía</h3>
                 <div>
-                    <p><a href="about.php">About Us</a></p>
-                    <p><a href="security.php">Security</a></p>
+                    <p><a href="about.php">Acerca de nosotros</a></p>
+                    <p><a href="security.php">Seguridad</a></p>
                 </div>
             </div>
             <div class="column">
-                <h3>Resources</h3>
+                <h3>Recursos</h3>
                 <div>
-                    <p><a href="blog.php">Blog and Updates</a></p>
+                    <p><a href="blog.php">Blog y actualizaciones</a></p>
                 </div>
             </div>
             <div class="column">
                 <h3>Legal</h3>
                 <div>
-                    <p><a href="privacy.php">Privacy</a></p>
-                    <p><a href="terms.php">Terms</a></p>
+                    <p><a href="privacy.php">Privacidad</a></p>
+                    <p><a href="terms.php">Términos de uso</a></p>
                 </div>
             </div>
             <div class="column">
-                <h3>Contact</h3>
+                <h3>Contacto</h3>
                 <div>
-                    <p><a href="contact.php">Contact Us</a></p>
+                    <p><a href="contact.php">Contáctanos</a></p>
                 </div>
             </div>
         </div>

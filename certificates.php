@@ -10,9 +10,9 @@ require 'header.php';
     <div class="section-default">
       <section class="section-search">
         <div class="search-form">
-          <form action="includes/search.inc.php" method="post">
+          <form action="includes/search.inc.php" method="post" id="">
             <div class="search-field">
-              <input type="text" name="key" placeholder="Type here the certficate token...">
+              <input type="text" name="key" placeholder="Ingrese el token del certificado...">
               <button type="submit" name="search-submit"><i class="material-icons md-18">search</i></button>
             </div>
           </form>
@@ -23,7 +23,7 @@ require 'header.php';
         <?php
         if (isset($_SESSION['userId']) && !$_SESSION['isCompany']) {
         ?>
-          <h1>My certificates</h1>
+          <h1>Mis certificados</h1>
           <hr>
           <div class="grid-vertical">
             <?php
@@ -53,7 +53,7 @@ require 'header.php';
                     </div>
                     <div class="grid-info">
                       <div>
-                        <h4>Share URL: </h4>
+                        <h4>Link para compartir: </h4>
                         <p><?php echo "www.certdepo.com/show-certificate.php?id=" . $userrow['idCerts']; ?></p>
                       </div>
                     </div>
@@ -64,13 +64,13 @@ require 'header.php';
                 ?>
           </div>
           <section class="section-default">
-            <p>You dont have any certificates yet!</p>
+            <p>¡Oh no! Aun no tienes certificados reclamados</p>
         <?php
               }
             }
           } else if (isset($_SESSION['userId']) && $_SESSION['isCompany']) {
         ?>
-        <h1>Certificates Emitted (Space available: <?php
+        <h1>Certificados Emitidos (Disponibles: <?php
                                                     require 'includes/dbh.inc.php';
 
                                                     $sql = "SELECT * FROM users WHERE idUsers=?;";
@@ -117,11 +117,11 @@ require 'header.php';
                     <p><a href='<?php echo "survey.php?id=" . $row['certId']; ?>'><?php echo "www.certdepo.com/survey.php?id=" . $row['certId']; ?></a></p>
                   </div>
                   <div class="info-inline">
-                    <h4>Certificates: </h4>
+                    <h4>Certificados: </h4>
                     <p><?php echo $row['certsCreated'] . " | " . $row['certsAssigned']; ?></p>
                   </div>
                   <div class="info-inline">
-                    <h4>Add more space </h4>
+                    <h4>Agregar más espacio </h4>
                     <form action="includes/add-space.inc.php" method="post">
                       <input type="hidden" name="id" value=<?php echo $row['certId']; ?>>
                       <input type="number" name="addup" min="1" max="<?php echo $userrow['certificatesAv']; ?>">
@@ -140,10 +140,10 @@ require 'header.php';
         </div>
         <div class="info-inline">
           <div>
-            <h3><a href="create-certificate.php">Create Certificate</a></h3>
+            <h3><a href="create-certificate.php">Crear certificado</a></h3>
           </div>
           <div>
-            <h3><a href="pricing.php">Buy Certificates</a></h3>
+            <h3><a href="pricing.php">Comprar certificados</a></h3>
           </div>
         </div>
       <?php

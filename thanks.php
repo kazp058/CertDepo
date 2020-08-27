@@ -6,9 +6,9 @@ require "header.php";
     <div class="wrapper-main">
         <section class="section-index">
             <div class="info">
-                <h3>Thanks for buying!</h3>
-                <p>Now everything is ready to go, start making <a>certificates now!</a></p>
-                <p>Remember that your certificates will not expire and we will keep your data secure!</p>
+                <h3>Gracias por comprar!</h3>
+                <p>Todo esta listo y ya puedes comenzar a emitir <a>certificados</a></p>
+                <p>Recuerda los certificados no tienen fecha de vencimiento, y puedes usarlos cuando quieras!</p>
             </div>
         </section>
     </div>

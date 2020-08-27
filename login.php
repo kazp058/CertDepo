@@ -23,7 +23,7 @@ require "header.php";
           <div class="normal-form">
             <form action="includes/logout.inc.php" method="post">
               <div class="buttons">
-                <button type="submit" name="logout-submit">Logout</button>
+                <button type="submit" name="logout-submit">Salir</button>
               </div>
             </form>
           </div>
@@ -33,29 +33,29 @@ require "header.php";
           <div class="normal-form">
             <form action="includes/login.inc.php" method="post">
               <div class="field">
-                <p>Email Address</p>
+                <p>Correo electrónico</p>
                 <div class="input-field">
                   <i class="material-icons md-36">email</i>
                   <input type="text" name="mail">
                 </div>
               </div>
               <div class="field">
-                <p>Password</p>
+                <p>Contraseña</p>
                 <div class="input-field">
                   <i class="material-icons md-36">vpn_key</i>
                   <input type="password" name="pwd">
 
                 </div>
-                <p class="suboption"><a href="reset-password.php">Forgot your password?</a></p>
+                <p class="suboption"><a href="reset-password.php">¿Olvidaste tu contraseña?</a></p>
               </div>
               <div class="buttons">
-                <button type="submit" name="login-submit">Login</button>
+                <button type="submit" name="login-submit">Ingresar</button>
               </div>
             </form>
           </div>
           <div class="option-horizontal">
-            <p>No account?</p>
-            <p><a href="signup.php">Signup here</a></p>
+            <p>No tienes cuenta?</p>
+            <p><a href="signup.php">Regístrate</a></p>
           </div>
         <?php
         }

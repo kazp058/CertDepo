@@ -24,9 +24,9 @@ session_start();
             </div>
             <ul class="nav-links">
                <li><a href="index.php">Home</a></li>
-               <li><a href="certificates.php">Certificates</a></li>
-               <li><a href="pricing.php">Pricing</a></li>
-               <li><a href="support.php">Support</a></li>
+               <li><a href="certificates.php">Certificados</a></li>
+               <li><a href="pricing.php">Precios</a></li>
+               <li><a href="support.php">Ayuda</a></li>
                <li class="nav-links-mobile">
                   <?php
                   if (isset($_SESSION['userId'])) {
@@ -35,15 +35,15 @@ session_start();
                         <form action="includes/logout.inc.php" method="post">
                            <button type="submit" name="logout-submit">
                               <i class="material-icons md-18">input</i>
-                              Logout
+                              Salir
                            </button>
                         </form>
                      </div>
                   <?php
                   } else {
                   ?>
-                     <a href="login.php">Login</a>
-                     <a href="signup.php">Sign Up</a>
+                     <a href="login.php">Ingresar</a>
+                     <a href="signup.php">Registrarse</a>
                   <?php
                   }
                   ?>
@@ -56,7 +56,7 @@ session_start();
                   <div class="logout-form">
                      <form action="includes/logout.inc.php" method="post">
                         <button type="submit" name="logout-submit"><i class="material-icons md-18">input</i>
-                           Logout
+                           Salir
                         </button>
                      </form>
                   </div>
@@ -64,8 +64,8 @@ session_start();
                } else {
                ?>
                   <div class="non-essential-mobile">
-                     <a href="login.php">Login</a>
-                     <a class="highlight-link-onblack" href="signup.php">Sign Up</a>
+                     <a href="login.php">Ingresar</a>
+                     <a class="highlight-link-onblack" href="signup.php">Registrarse</a>
                   </div>
                <?php
                }
