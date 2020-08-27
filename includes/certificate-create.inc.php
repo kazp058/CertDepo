@@ -31,14 +31,14 @@ if (isset($_POST['survey-submit'])) {
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $resultCheck = mysqli_stmt_num_rows($stmt);
-            if($resultCheck > 0){
+            if ($resultCheck > 0) {
                $token = bin2hex(random_bytes(11));
                $i = $i + 1;
-            }else{
+            } else {
                $repeated = false;
             }
-            if($i > 30){
-               header("Location: ../survey.php?id=".$id."&error=nospace");
+            if ($i > 30) {
+               header("Location: ../survey.php?id=" . $id . "&error=nospace");
                exit();
             }
          }
@@ -57,21 +57,16 @@ if (isset($_POST['survey-submit'])) {
 
          if ($row = mysqli_fetch_assoc($result)) {
 
-            if($row['certsCreated'] + 1 > $row['certsAssigned']){
-               header("Location: ../survey.php?id=" . $id . "&error=nospace");
+            $sql = "UPDATE certscompany SET certsCreated=" . $row['certsCreated'] . " +1 WHERE certId=?;";
+            $stmt = mysqli_stmt_init($conn_certs);
+
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+               header("Location: ../survey.php?id=" . $id . "&error=sql");
                exit();
-            }else{
-               $sql = "UPDATE certscompany SET certsCreated=".$row['certsCreated'] ." +1 WHERE certId=?;";
-               $stmt = mysqli_stmt_init($conn_certs);
-         
-               if (!mysqli_stmt_prepare($stmt, $sql)) {
-                  header("Location: ../survey.php?id=" . $id . "&error=sql");
-                  exit();
-               } else {
-                  mysqli_stmt_bind_param($stmt, "s", $id);
-                  mysqli_stmt_execute($stmt);
-                  $result = mysqli_stmt_get_result($stmt);
-               }
+            } else {
+               mysqli_stmt_bind_param($stmt, "s", $id);
+               mysqli_stmt_execute($stmt);
+               $result = mysqli_stmt_get_result($stmt);
             }
 
             $sql = "INSERT INTO certs (titleCerts, userName, certMail, issuerCerts, tokenCerts, claimCerts, imageCert, dateCert) VALUES (?,?,?,?,?,?,?,?);";
@@ -81,19 +76,19 @@ if (isset($_POST['survey-submit'])) {
                header("Location: ../survey.php?id=" . $id . "&error=sql");
                exit();
             } else {
-               mysqli_stmt_bind_param($stmt, "sssisiss", $row['titleCerts'], $name, $mail, $id , $token, $claim, $image, $date);
+               mysqli_stmt_bind_param($stmt, "sssisiss", $row['titleCerts'], $name, $mail, $id, $token, $claim, $image, $date);
                mysqli_stmt_execute($stmt);
-               $result = mysqli_stmt_get_result($stmt);
+               $result = mysqli_stmt_insert_id($stmt);
 
-               $url = 'http://www.certdepo.com/certificates.php?token=' . $token;
+               $url = 'http://www.certdepo.com/certificates.php?id=' . $result;
 
                $to = $mail;
-               $subject = 'Congratulations for you ' . $row['titleCerts'] . ' certificate';
-               $message = '<p>Congrats ' . $name . '</p>';
-               $message .= '<p>You just recieved a certificate, that you can claim if you create an account or leave it be, but remember, your certificate can be claimed by an account.</p>';
-               $message .= '<p>Here is your token, share this in your cv so everyone can verify your knowledge: ' . $token . '</p>';
-               $message .= '<p>Here is your claim code, make sure to not share this: ' . $claim . '</p>';
-               $message .= '<p>Go to this link to claim your certificate:</br>';
+               $subject = 'Acabas de recibir tu certificado sobre ' . $row['titleCerts'];
+               $message = '<p>Felicidades ' . $name . '</p>';
+               $message .= '<p>Acabas de recibir tu certificado, ahora puedes acceder a tu cuenta para reclamar el certificado y asociarlo o puedes dejarlo tal y como esta.</p>';
+               $message .= '<p>Este es tu token publico: ' . $token . '</p>';
+               $message .= '<p>Este es tu codigo secreto para reclamar el certificado: ' . $claim . '</p>';
+               $message .= '<p>Ve a este link para reclamar el certificado:</br>';
                $message .= '<a href="' . $url . '">' . $url . '</a></p>';
 
                $headers = "From: Certme <email@gmail.com>\r\n";

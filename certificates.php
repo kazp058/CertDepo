@@ -8,6 +8,8 @@ require 'header.php';
       <?php require "messages.php"; ?>
     </section>
     <div class="section-default">
+
+
       <section class="section-search">
         <div class="search-form">
           <form action="includes/search.inc.php" method="post" id="">
