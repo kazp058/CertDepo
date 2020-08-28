@@ -2,8 +2,9 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 //require_once('/usr/share/php/libphp-phpmailer/autoload.php');
-require "/usr/share/php/libphp-phpmailer/PHPMailerAutoload.php";
+require "PHPMailer/vendor/autoload.php";
 function sendmail($email,$subject,$body){
   if(!empty($email)){
 //    require_once "../usr/share/php/libphp-phpmailer/src/PHPMailer.php";
@@ -23,7 +24,7 @@ function sendmail($email,$subject,$body){
     //$mail->Port = 465;
     //$mail->SMTPSecure = "ssl";
     $mail->isHTML(true);
-    $mail->setFrom('certdepo@gmail.com');
+    $mail->setFrom($account);
     $mail->addAddress($email);
     $mail->Subject = $subject;
     $mail->Body = $body;
@@ -34,7 +35,7 @@ function sendmail($email,$subject,$body){
     }
     else
     {
-       header("Location: ../reset-password.php?error=serviceinvalid");
+       header("Location: ../certificates.php?error=serviceinvalid");
        exit();
     }      //return json_encode(array("status"=>$status, "response"=>$response));
   }
