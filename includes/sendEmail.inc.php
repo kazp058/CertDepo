@@ -1,8 +1,7 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
 require_once('/usr/share/php/libphp-phpmailer/autoload.php');
-require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
-require '/usr/share/php/libphp-phpmailer/class.smtp.php';
 function sendmail($email,$subject,$body){
   if(!empty($email)){
 //    require_once "../usr/share/php/libphp-phpmailer/src/PHPMailer.php";
@@ -33,7 +32,7 @@ function sendmail($email,$subject,$body){
     }
     else
     {
-       header("Location: ../reset-password.php?error=serviceinvalid&".$accountpwd);
+       header("Location: ../reset-password.php?error=serviceinvalid");
        exit();
     }      //return json_encode(array("status"=>$status, "response"=>$response));
   }
