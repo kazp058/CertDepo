@@ -23,7 +23,7 @@ sudo cd /var/wwww/certdepo
 sudo git clone https://github.com/kazp058/CertDepo.git /var/www/certdepo/.
 sudo chmod -R 777 /var/www/certdepo
 sudo cd
-sudo mv /var/wwww/certdepo.com.conf /etc/sites-enable/certdepo.conf
+sudo mv /var/wwww/certdepo.conf /etc/apache2/sites-available/certdepo.conf
 sudo a2ensite certdepo.conf
 sudo a2dissite 000-default.conf
 sudo systemctl restart apache2
