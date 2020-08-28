@@ -1,6 +1,6 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer;
 require_once('/usr/share/php/libphp-phpmailer/autoload.php');
 function sendmail($email,$subject,$body){
   if(!empty($email)){
