@@ -1,11 +1,8 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-
 require_once('/usr/share/php/libphp-phpmailer/autoload.php');
-
+require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
+require '/usr/share/php/libphp-phpmailer/class.smtp.php';
 function sendmail($email,$subject,$body){
   if(!empty($email)){
 //    require_once "../usr/share/php/libphp-phpmailer/src/PHPMailer.php";
