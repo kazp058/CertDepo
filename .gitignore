@@ -1,5 +1,5 @@
 #Ignore these files
 
 includes/credentials.php
-includes/scripts/cretificates/temp/
-includes/PHPMailer/
+includes/scripts/cretificates/temp/*
+includes/PHPMailer/*
