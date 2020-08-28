@@ -80,7 +80,7 @@ if (isset($_POST['survey-submit'])) {
                mysqli_stmt_execute($stmt);
                $result = mysqli_stmt_insert_id($stmt);
 
-               $url = 'http://www.certdepo.com/certificates.php?id=' . $result;
+               $url = 'http://www.certdepo.com/show-certificate.php?id=' . $result;
 
                $to = $mail;
                $subject = 'Acabas de recibir tu certificado sobre ' . $row['titleCerts'];
