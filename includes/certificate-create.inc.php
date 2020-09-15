@@ -80,16 +80,56 @@ if (isset($_POST['survey-submit'])) {
                mysqli_stmt_execute($stmt);
                $result = mysqli_stmt_insert_id($stmt);
 
-               $url = 'http://www.certdepo.com/show-certificate.php?id=' . $result;
+               $url = 'https://www.certdepo.com/show-certificate.php?id=' . $result;
 
                $to = $mail;
                $subject = 'Acabas de recibir tu certificado sobre ' . $row['titleCerts'];
-               $message = '<p>Felicidades ' . $name . '</p>';
-               $message .= '<p>Acabas de recibir tu certificado, ahora puedes acceder a tu cuenta para reclamar el certificado y asociarlo o puedes dejarlo tal y como esta.</p>';
-               $message .= '<p>Este es tu token publico: ' . $token . '</p>';
-               $message .= '<p>Este es tu codigo secreto para reclamar el certificado: ' . $claim . '</p>';
-               $message .= '<p>Ve a este link para reclamar el certificado:</br>';
-               $message .= '<a href="' . $url . '">' . $url . '</a></p>';
+               $message = "<head><style>
+                              .contenido{
+                                 background: #1d1d1d;
+                                 padding: 20px 10px;
+                                 margin: 10px;
+                                 border-radius: 5px;
+                              }
+                              p{
+                                 color: #faf9f9;
+                                 font-weight: bold;
+                                 text-decoration: none;
+                              }
+                              h1{
+                                 font-weight: bolder;
+                                 font-size: 30px;
+                                 justify-content: center;
+                                 color: #faf9f9;
+                              }
+                              strong{
+                                 color: #810000;
+                                 font-weight: bold;
+                                 background: #dfdfdf;
+                                 padding: 5px;
+                                 border-radius: 10px;
+                                 margin: 5px;
+                              }
+                              .center{
+                                 display: flex;
+                                 justify-content: space-around;
+                                 align-items: center;
+                              }
+                              a{
+                                 text-decoration: none;
+                                 color: #faf9f9;
+                                 background: #810000;
+                                 padding: 15px 10px;
+                                 margin: 5px;
+                                 font-weight: bolder;
+                                 font-size: 20px;
+                              }
+                           </style></head><body>";
+               $message .= '<div class="contenido"><h1>Felicidades ' . $name . '</h1>';
+               $message .= '<p>Acabas de recibir tu certificado, ahora puedes acceder a tu cuenta para reclamar el certificado y asociarlo o puedes dejarlo tal y como esta. En este correo encontraras 2 codigos, uno es el token publico el que podras poner en CV o compartirlo en tus redes sociales para que todos puedan ver tu certificado, y luego esta tu codigo para reclamar el certificado, en caso de que tengas una cuenta en nuestra plataforma podras usar esto para poder asociar el certificado a tu cuenta.</p>';
+               $message .= '<p>Este es tu token publico: <strong>' . $token . '</strong></p>';
+               $message .= '<p>Este es tu codigo secreto para reclamar el certificado: <strong>' . $claim . '</strong></p>';
+               $message .= '<div class="center"><a href="' . $url . '"><p>Ver certificado</p></a></div></div></body>';
 
                $headers = "From: Certme <email@gmail.com>\r\n";
                $headers .= "Reply-To: support@certme.com\r\n";
