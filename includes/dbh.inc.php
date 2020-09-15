@@ -1,6 +1,6 @@
 <?php
 
-$servername= "localhost";
+$servername= "10.60.192.4";
 
 $dBUsername="server";
 $dBPassword="server";
@@ -18,4 +18,4 @@ if(!$conn_certs){
   die("Connection failed: ".mysqli_connect_error());
 }
 
-$conn_server = mysqli_connect($servername, $dBUsername, $dBPassword);
+//$conn_server = mysqli_connect($servername, $dBUsername, $dBPassword);
