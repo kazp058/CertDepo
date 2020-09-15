@@ -29,8 +29,10 @@ require "header.php";
          <div class="subsplitter">
             <hr>
          </div>
-         <div class="certimage">
-            <img src="includes/scripts/certificates/temp/Cert6.png">
+         <div class="certview">
+            <div class="certimage">
+               <img src="includes/scripts/certificates/temp/Cert6.png">
+            </div>
          </div>
          <div class="subsplitter">
             <hr>
