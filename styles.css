@@ -142,6 +142,7 @@ header .logo strong {
 .certimage img {
     width: 1000;
     height: auto;
+    align-items: center;
 }
 
 .certinfo h2 {
