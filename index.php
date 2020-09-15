@@ -29,11 +29,7 @@ require "header.php";
          <div class="subsplitter">
             <hr>
          </div>
-         <div class="certview">
-         <div class="certinfo">
-            <p>Este es un ejemplo de los certificados que emitimos.</p>
-            <p>Nosotros mostramos informacion vital como el receptor, el titulo del certificado y obviamente el codigo de verificacion.</p>
-         </div>
+         <div class="certview center">
             <div class="certimage">
                <img src="includes/scripts/certificates/temp/Cert6.png">
             </div>
