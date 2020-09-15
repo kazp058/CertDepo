@@ -29,6 +29,12 @@ require "header.php";
          <div class="subsplitter">
             <hr>
          </div>
+         <div class="certimage">
+            <img src="includes/scripts/certificates/temp/Cert6.png">
+         </div>
+         <div class="subsplitter">
+            <hr>
+         </div>
          <div class="grid-vertical">
             <div class="grid-e">
                <div class="icon"><i class="material-icons md-48">grading</i></div>
@@ -68,7 +74,7 @@ require "header.php";
             <div class="grid-e">
                <div class="icon"><i class="material-icons md-48">share</i></div>
                <div class="content">
-                  <h3>Fácil  de compartir </h3>
+                  <h3>Fácil de compartir </h3>
                   <p>Códigos qr y links, te permiten compartir tu información de forma rápida y segura, protegiendo tu información de terceros y respaldando tus certificados en el internet.</p>
                </div>
             </div>
