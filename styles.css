@@ -132,6 +132,13 @@ header .logo strong {
     padding: 25px 30px;
 }
 
+.certview-center {
+    display: flex;
+    align-items: center;
+    background: #dfdfdf;
+    padding: 25px 30px;
+}
+
 .certimage img {
     width: 1000;
     height: auto;
