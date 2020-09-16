@@ -31,11 +31,6 @@ require "header.php";
          </div>
          <div class="certview-">
             <div class="certinfo">
-               <h2>Certificados</h2>
-               <h2>Seguros</h2>
-               <h2>Protegidos</h2>
-               <h2>Respaldados</h2>
-               <h2>Gratuitos</h2>
             </div>
             <div class="certimage">
                <img src="includes/scripts/certificates/temp/Cert6.png">
