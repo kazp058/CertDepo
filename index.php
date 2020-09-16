@@ -30,12 +30,12 @@ require "header.php";
             <hr>
          </div>
          <div class="certview-center">
-            <certinfo>
-            <h2>Certificaods</h2>
-            <h2>Seguros</h2>
-            <h2>Protegidos</h2>
-            <h2>Respaldados</h2>
-            </certinfo>
+            <div class="certinfo">
+               <h2>Certificaods</h2>
+               <h2>Seguros</h2>
+               <h2>Protegidos</h2>
+               <h2>Respaldados</h2>
+            </div>
             <div class="certimage-center">
                <img src="includes/scripts/certificates/temp/Cert6.png">
             </div>
