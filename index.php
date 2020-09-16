@@ -29,8 +29,14 @@ require "header.php";
          <div class="subsplitter">
             <hr>
          </div>
-         <div class="certview center">
-            <div class="certimage">
+         <div class="certview-center">
+            <certinfo>
+            <h2>Certificaods</h2>
+            <h2>Seguros</h2>
+            <h2>Protegidos</h2>
+            <h2>Respaldados</h2>
+            </certinfo>
+            <div class="certimage-center">
                <img src="includes/scripts/certificates/temp/Cert6.png">
             </div>
          </div>
