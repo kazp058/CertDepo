@@ -4,11 +4,24 @@ Website design for hosting a certficicates management system, this site helps ke
 
 ## Server information
 
-The server is running with a LAMP server.
+The server is running with a LAMP server with Debian GNU/Linux 10 (Buster).
 
 Run this command 
 ```shell
 sudo chmod -R 777 certdepo
+```
+
+For server installation and configuration use this commad:
+
+```bash
+#! /bin/bash
+apt-get update
+apt-get install git -y
+mkdir /var/www/certdepo
+git clone https://github.com/kazp058/CertDepo.git /var/www/certdepo/.
+chmod -R 777 /var/www/certdepo
+chmod +x /var/www/certdepo/make-server.sh
+./var/www/certdepo/make-server.sh
 ```
 
 ## Instructions for use
