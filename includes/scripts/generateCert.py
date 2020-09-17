@@ -23,7 +23,6 @@ def wordsbyspaces(phrase):
 
     return count
 
-
 def getindex(lenlist, minval):
     value = 0
     for i in range(len(lenlist)):
@@ -38,7 +37,7 @@ def getindex(lenlist, minval):
 line = sys.argv[1:]
 
 imagename, username, title, token, issuerName, idcert = getparam(line)
-path = os.path.join(os.getcwd(), "includes/scripts/certificates/")
+path = os.getcwd() + "\\certificates\\"#os.path.join(os.getcwd(), "includes/scripts/certificates/")
 
 if imagename == '001.png':
     image = Image.open(path+'001.png')
@@ -54,7 +53,7 @@ if imagename == '001.png':
     back_im.paste(qrimg, (0, 0))
     draw = ImageDraw.Draw(back_im)
 
-    fontpath = '/var/www/certdepo/includes/scripts/tw-cen-mt-6.ttf'
+    fontpath = 'tw-cen-mt-6.ttf'
 
     if len(issuerName) < 25:
         font = ImageFont.truetype(fontpath, size=200)
@@ -72,7 +71,10 @@ if imagename == '001.png':
 
     color = 'rgb(7,75,114)'
 
-    if len(username) < 30:
+    print(username)
+    print(len(username))
+
+    if len(username) <= 30:
         draw.text((200, 950), username, fill=color, font=font)
         font = ImageFont.truetype(fontpath, size=200)
     else:
@@ -86,15 +88,15 @@ if imagename == '001.png':
         draw.text((200, 900), n1, fill=color, font=font)
         draw.text((200, 1080), n2, fill=color, font=font)
     
+
     if len(title) < 28:
         draw.text((200, 1500), title, fill=color, font=font)
         font = ImageFont.truetype(fontpath, size=200)
     else:
         font = ImageFont.truetype(fontpath, size=150)
         count = wordsbyspaces(title)
-        print(count)
         namesplit = title.split(" ")
-        mindex = getindex(count,55)
+        mindex = getindex(count,40)
 
         n1 = " ".join(namesplit[:mindex])
         n2 = " ".join(namesplit[mindex:])
@@ -109,4 +111,4 @@ if imagename == '001.png':
 
     back_im = back_im.convert('RGB')
     #raise Exception(os.getcwd())
-    back_im.save("includes/scripts/certificates/temp/"+filename, 'PNG')
+    back_im.save("certificates\\temp\\"+filename, 'PNG')
