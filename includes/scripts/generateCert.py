@@ -37,7 +37,7 @@ def getindex(lenlist, minval):
 line = sys.argv[1:]
 
 imagename, username, title, token, issuerName, idcert = getparam(line)
-path = os.getcwd() + "\\certificates\\"#os.path.join(os.getcwd(), "includes/scripts/certificates/")
+path = os.path.join(os.getcwd(), "includes/scripts/certificates/")
 
 if imagename == '001.png':
     image = Image.open(path+'001.png')
@@ -111,4 +111,4 @@ if imagename == '001.png':
 
     back_im = back_im.convert('RGB')
     #raise Exception(os.getcwd())
-    back_im.save("certificates\\temp\\"+filename, 'PNG')
+    back_im.save("includes/scripts/certificates/temp/"+filename, 'PNG')
