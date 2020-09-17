@@ -24,9 +24,9 @@ session_start();
                <p>cert<strong>depo</strong></p>
             </div>
             <ul class="nav-links">
-               <li><a href="index.php">Home</a></li>
-               <li><a href="certificates.php">Certificados</a></li>
-               <li><a href="support.php">Ayuda</a></li>
+               <li ><a href="index.php">Home</a></li>
+               <li ><a href="certificates.php">Certificados</a></li>
+               <li ><a href="support.php">Ayuda</a></li>
                <li class="nav-links-mobile">
                   <?php
                   if (isset($_SESSION['userId'])) {

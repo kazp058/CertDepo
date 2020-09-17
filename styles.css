@@ -140,18 +140,18 @@ header .logo strong {
 }
 
 .certimage img {
-    width: 1000;
+    width: 90%;
     height: auto;
     align-items: center;
 }
 
-.certimage-center {
+.certimage {
     text-align: center;
     display: block;
 }
 
-.certimage-center img {
-    width: 1000;
+.certimage img {
+    width: 90%;
     height: auto;
     align-items: center;
 }
@@ -175,19 +175,21 @@ header .logo strong {
 
 .certinfo .field {
     display: flex;
-    padding: 20px 10px;
+    align-items: center;
+    padding: 10px 5px;
     border-radius: 30px;
 }
 
 .certinfo .field .input-field input {
-    width: 200px;
+    width: 150px;
+    height: 50px;
     border-radius: 30px;
     background: #1d1d1d;
     color: #e6ecf5;
     outline: none;
     border: none;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bolder;
 }
 
@@ -201,6 +203,7 @@ header .logo strong {
     font-size: 20px;
     font-weight: bolder;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 
@@ -307,7 +310,7 @@ footer {
     padding: 20px;
     font-size: 12px;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     margin-top: 20px;
 }
@@ -371,7 +374,7 @@ footer .centered {
     flex-direction: column;
     align-items: center;
     margin: inherit;
-    width: inherit;
+    width: 60%;
 }
 
 
@@ -477,7 +480,7 @@ footer .centered {
 .section-form .form-container {
     background: #faf9f9;
     margin: 100px;
-    width: 50%;
+    width: 30%;
     height: inherit;
     padding: 50px;
 }
@@ -632,8 +635,8 @@ footer .centered {
 /* Section Default */
 
 .section-search .search-form {
-    width: 60%;
-    position: absolute;
+    width: 100%;
+    position: flex;
     background: #525252;
     border-radius: 40px;
     padding: 5px;
@@ -815,4 +818,201 @@ input::-webkit-inner-spin-button {
     border-radius: 50%;
     background: #810000;
     cursor: pointer;
+}
+
+@media screen and (max-width:1010px) {
+    form .optional-input {
+        display: none;
+    }
+    .nav-links {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    body {
+        overflow-x: hidden!important;
+    }
+    form .optional-input {
+        display: none;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1d1d1d;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .header-login {
+        display: none;
+    }
+    .non-essential-mobile {
+        display: none;
+    }
+    .nav-links-mobile {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+    form hr {
+        width: 100%;
+    }
+    .section-default {
+        text-align: center;
+    }
+    .section-default form {
+        width: 80%
+    }
+    .section-default .form-section {
+        align-items: center;
+        margin: 30px auto;
+    }
+    .grid-vertical {
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 1px;
+    }
+    .certview {
+        display: flex;
+        flex-direction: column;
+        background: #dfdfdf;
+        padding: 25px 30px;
+    }
+    .section-form .form-container {
+        background: #faf9f9;
+        margin: 100px;
+        width: 90%;
+        height: inherit;
+        padding: 50px;
+    }
+    .column-2 {
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 1px;
+    }
+    .column-2 .column-4 {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        grid-row-gap: 1px;
+    }
+    .column-4 .column {
+        align-items: center;
+        text-align: center;
+        margin: 5px;
+    }
+    .copyright-right .column-2 {
+        margin-top: 5px;
+        grid-column-gap: 10px;
+        color: #525252;
+        grid-template-columns: auto auto;
+    }
+    .section-search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: inherit;
+        width: 400px;
+    }
+    footer {
+        background: #dfdfdf;
+        padding: 20px;
+        font-size: 12px;
+        position: absolute;
+        bottom: -200px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .grid-vertical .grid-e {
+        display: flex;
+        margin: 10px;
+        padding: 10px 5px;
+    }
+    .grid-vertical {
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 1px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    body {
+        overflow-x: hidden!important;
+    }
+    form .optional-input {
+        display: none;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1d1d1d;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .header-login button {
+        display: none;
+    }
+    .non-essential-mobile {
+        display: none;
+    }
+    .nav-links-mobile {
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+    .section-default form {
+        width: 100%;
+    }
+}
+
+.nav-active {
+    display: flex;
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
