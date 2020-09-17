@@ -56,7 +56,7 @@ if imagename == '001.png':
 
     fontpath = '/var/www/certdepo/includes/scripts/tw-cen-mt-6.ttf'
 
-    if len(issuerName) <= 25:
+    if len(issuerName) < 25:
         font = ImageFont.truetype(fontpath, size=200)
         draw.text((200, 500), issuerName, fill='rgb(0,0,0)', font=font)
     else:
@@ -72,7 +72,7 @@ if imagename == '001.png':
 
     color = 'rgb(7,75,114)'
 
-    if len(username) <= 32:
+    if len(username) < 30:
         draw.text((200, 950), username, fill=color, font=font)
         font = ImageFont.truetype(fontpath, size=200)
     else:
@@ -86,7 +86,7 @@ if imagename == '001.png':
         draw.text((200, 900), n1, fill=color, font=font)
         draw.text((200, 1080), n2, fill=color, font=font)
     
-    if len(title) <= 37:
+    if len(title) < 30:
         draw.text((200, 1500), title, fill=color, font=font)
         font = ImageFont.truetype(fontpath, size=200)
     else:
