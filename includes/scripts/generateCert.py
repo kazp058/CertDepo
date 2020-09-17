@@ -86,7 +86,7 @@ if imagename == '001.png':
         draw.text((200, 900), n1, fill=color, font=font)
         draw.text((200, 1080), n2, fill=color, font=font)
     
-    if len(title) < 30:
+    if len(title) < 28:
         draw.text((200, 1500), title, fill=color, font=font)
         font = ImageFont.truetype(fontpath, size=200)
     else:
