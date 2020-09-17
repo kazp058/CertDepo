@@ -53,7 +53,7 @@ if imagename == '001.png':
     back_im.paste(qrimg, (0, 0))
     draw = ImageDraw.Draw(back_im)
 
-    fontpath = 'tw-cen-mt-6.ttf'
+    fontpath = '/var/www/certdepo/includes/scripts/tw-cen-mt-6.ttf'
 
     if len(issuerName) < 25:
         font = ImageFont.truetype(fontpath, size=200)
